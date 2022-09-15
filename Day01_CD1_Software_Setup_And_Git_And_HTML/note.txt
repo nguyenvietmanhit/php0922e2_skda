@@ -1,0 +1,12 @@
+- Thời gian học: 18h00 - 21h00
+
+- Tài liệu mỗi buổi học:
++ Day01_<nội dung buổi học>/          
+/ Code_demo: /Draft : chứa code mẫu của buổi học nếu có
+/ Bai_tap_ve_nha: chứa file bài tập tương ứng nếu
+có
+/ Slides
++ Chrome cài extension: Laban + Google
+Translate, hỗ trợ về Tiếng Anh (đọc/ dịch)
++ Cmder + Git
+itplusacademy

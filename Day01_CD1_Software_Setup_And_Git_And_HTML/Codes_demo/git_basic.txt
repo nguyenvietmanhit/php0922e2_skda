@@ -1,0 +1,18 @@
+git_basic.txt
+1 - Git:
++ Là công cụ giúp làm việc nhóm hiệu quả,
+ngoài ra cũng dùng để lưu trữ
+Về mặt lưu trữ: Google Drive, USB
++ Github, Gitlab, Bitbucket: là dịch vụ
+của bên thứ 3 tích hợp Git
++ Sử dụng Git: dùng command line,  UI
+-> beginner ưu tiên command line
+UI: SourceTree, SVN ...
+2 - Thao tác cơ bản với Git:
++ Dùng Github để demo
++ Cài Git trên máy
++ Đăng ký tài khoản trên Github
++ Tạo respository(kho lưu trữ)
++ Link git của lớp: 
+https://github.com/nguyenvietmanhit/php0922e2_skda
+0987599921
