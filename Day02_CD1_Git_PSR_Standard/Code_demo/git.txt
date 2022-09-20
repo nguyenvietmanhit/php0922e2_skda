@@ -1,0 +1,34 @@
+git.txt
+1/ Đồng bộ source từ local lên repo trên github bằng command git
++ Command line cơ bản:
+D: -> di chuyển ổ
+cd \ -> về ổ gốc từ đường dẫn hiện tại, change directory
+mkdir php0922e_local -> tạo thư mục
+ls -la -> liệt kê file/thư mục theo hàng, bao gồm ẩn
+cd .. -> lên 1 cấp thư mục
+Mũi tên lên xuống -> back/next câu lệnh
++ Tạo 2 file trong thư mục php0922e_local:
+common.txt: nội dung tùy ý
+<tên-của-bạn>.docx: Hello, <tên-của-bạn>
+echo 'Noi dung tuy y' > common.txt
+echo 'Hello, manhnv' > manhnv.docx
+cat common.txt -> xem nội dung file
+C: /php0922e_local/
+                  /common.txt: nội dung tùy ý
+                  /<tên-của-bạn>.docx: Hello, <tên-của-ban>
+- Liên kết source code trên local với repo trên github
++ git init: khởi tạo Git trên thư mục hiện tại, Git quản lý
+mọi sự thay đổi trong thư mục này (tracking)
++ git status: ktra trạng thái file/thư mục
++ git add <file>: thêm file/thư mục để git quản lý, cbi cho bước
+commit
+git add . -> add tất cả file/thư mục thay đổi (cẩn thận)
++ git commit -m "manhnv first commit" -> đánh dấu lại
+các thay đổi của git add
++ git remote add origin https://github.com/nguyenvietmanhit/php0922e_demo.git -> gắn remote vào local
++ git remote -v -> ktra lại remote trên local
+-> git add, git commit, git push là bộ ba bước để đẩy code
+
+- git clone: lấy source code từ git của người khác về máy
+git clone https://github.com/nguyenvietmanhit/php0922e2_skda.git
+-> kéo source code về máy local
