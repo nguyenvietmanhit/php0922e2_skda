@@ -29,6 +29,9 @@ các thay đổi của git add
 + git remote -v -> ktra lại remote trên local
 -> git add, git commit, git push là bộ ba bước để đẩy code
 
-- git clone: lấy source code từ git của người khác về máy
+- git clone: lấy source code từ git của người khác về máy, dùng 1 lần đầu tiên và duy nhất
 git clone https://github.com/nguyenvietmanhit/php0922e2_skda.git
 -> kéo source code về máy local
+
+- git pull origin main: lấy source mới nhất từ nhánh main trên 
+repo
