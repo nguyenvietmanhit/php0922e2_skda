@@ -1,0 +1,38 @@
+git_teamwork.txt
+Quy trình code nhóm sử dụng Git:
++ Bài toán: team 3 bạn code 1 dự án, khi gộp code
+thì phải copy file thủ công vào USB, sau đó gộp code vào máy của nhóm trưởng -> thủ công
+-> dùng tool để quản lý gộp code 1 cách tự động
+-> Git
++ VD: Team 22 người, PM la giảng viên, 21 dev.
+Yêu cầu: mỗi 1 dev tạo 1 file hiển thị tên của dev. 
+VD: manhnv.txt, nội dung file: Hello, manhnv
+- B1: PM
++ PM khởi tạo project, tạo 1 repo
++ PM mời các cộng tác viên vào dự án:
+Settings -> Collaborators -> Invite
+- B2: Dev
++ Lấy source code về: git clone
++ cd vào project
++ Tạo 1 nhánh riêng để code
+Nhánh / branch chứa code
+Một project có 1 số nhánh nhất định, và ko code
+trực tiếp trên các nhánh này
+Với project này nhánh chính là nhánh main
+- git checkout main: chuyển về nhánh main
+- git pull origin main: lấy code mới nhất từ nhánh main trên remote về nhánh main trên local
+- git checkout -b manhnv_feature
+git branch manhnv_feature: tạo nhánh mới
+git checkout manhnv_feaature: chuyển nhánh
++ Code....: tạo file, hiển thị tên của bạn trong
+file. manhnv.txt: Hello manhnv
++ Qui tắc 3 bước để đẩy code: chú ý khi push thì
+phải push lên branch của mình, ko đc push lên
+nhánh chính
+- git push origin manhnv_feature
+git add commit push
+git status
+
++ B3: Dev: Tạo Merge Request / Pull Request để yêu cầu PM review code và merge/gộp code của bạn
+vào nhánh main chính: cần để ý url sau khi push thành công
++ B4: Review và merge code của các dev: PM
