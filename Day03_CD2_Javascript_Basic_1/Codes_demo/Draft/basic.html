@@ -1,0 +1,82 @@
+<!-- basic.html -->
+<script>
+	// Ctrl /
+	// alert('Test code Javascript');
+	// 1/ Ngôn ngữ lập trình Javasript
+	// + Là ngôn ngữ client/trình duyệt, một số thư viện của JS bên client: Angular, React, Vue JS ...
+	// + Hoạt động như 1 ngôn ngữ backend: Node JS
+	// + CD2: học Javasript theo hướng client, hiểu đc các kiến thức cơ bản của lập trình nói chung
+	// 2/ Khai báo vùng làm việc của JS: hiện tại chỉ dùng cách là tạo 1 thẻ script đặt trong file .html
+	// 3/ Các kiến thức cơ bản của lập trình
+	// - Biến:
+	// + Dùng để lưu trữ giá trị, giá trị này có thể thay đổi 
+	// + LÀ 1 vùng nhớ
+	// + Khai báo biến: dùng các từ khóa var, let, const
+	var fullname = 'manhnv';
+	fullname = 'abc';
+	// Hàm debug trong JS -> show ở tab Console của trình duyệt
+	console.log(fullname);
+	var name = 'manhnv', age = '32';
+	// + Quy tắc đặt tên biến:
+	// Tên biến phải bắt đầu bằng ký tự chữ hoặc _
+	// var 1name = 'manhnv';
+	var name = 'abc', _fullname = 'manhnv';
+	// Tên biến ko chứa ký tự đặc biệt, trừ $
+	// var name% = 'manhnv';
+	// Tên biến ko đc trùng từ khóa của ngôn ngữ:
+	// var var = 'manhnv';
+	// Tên biến cần có ngữ nghĩa:
+	var x, y;
+	var number1, nubmer2;
+	var numberOfPage; //camel
+	var number_of_page;
+	//var numberofpage;
+	// Tên biến phân biệt hoa thường:
+	var name = 'manhnv';
+	var Name = 'abc';
+	// - Thực hành
+	var name = 'Mạnh';
+	var age = 32;
+	var address = 'Hoài Đức - Hà Nội';
+	
+	document.write("Tên của bạn: " + name);
+	document.write("<br>");
+	document.write("Tuổi của bạn: " + age);
+	document.write("<br>");
+	document.write("Địa chỉ: " + address);
+
+	// - Kiểu dữ liệu:
+	// + Phân loại 1 dữ liệu cụ thể
+	// number: là kiểu số
+	var age = 32;
+	var phone = 123;
+	var pi = 3.14;
+	console.log(typeof pi); //number ?
+	// string: kiểu chuỗi, lưu các giá trị chuỗi
+	var str1 = 'String 1';
+	var str2 = "String 2";
+	var str3 = "Hello 'manhnv' ";
+	console.log(str3); //Hello 'manhnv'
+	console.log(typeof str3); //string
+	var str = str1 + str2 + str3; //nối chuỗi
+	// boolean: kiểu đúng sai, chỉ gồm 2 giá trị duy nhất là true và false viết thường hết
+	var is_male = true;
+	var is_female = false;
+	// var is_check = True; //báo lỗi cú pháp
+	console.log(typeof is_female); //bool
+	// -> 3 kiểu dữ liệu number, string, boolean gọi là 3 kiểu dữ liệu nguyên thủy: tính toán đc
+	// undefined: kiểu ko xác định, xảy ra khi khai báo biến mà ko gán giá trị
+	var age;
+	console.log(typeof age); //undefined
+	// array: kiểu mảng, lưu đc nhiều giá trị tại 1 thời điểm
+	var arrs = [1, 2, 3, 'a', 'b', true, []];
+	console.log(typeof arrs); //object: JS coi mảng là 1 đối tượng
+	// object: đối tượng, 
+	var person = {
+		name: 'manhv',
+		age: 32,
+		showName: function() {
+			console.log(this.name);
+		}
+	};
+</script>
