@@ -1,0 +1,144 @@
+<!-- javscript_basic_continue.html -->
+<script>
+	// 1 - Hằng
+	// + Là biến lưu trữ giá trị ko thể thay đổi sau khi khởi tạo
+	// + Khai báo, tên hằng nên viết hoa
+	const PI = 3.14;
+	const MAX_FILE = 10;
+	console.log(PI);
+	// PI = 123; //lỗi
+
+
+	// alert('test');
+	// 2 - Kiểu dữ liệu
+	// Phân loại dữ liệu, mỗi loại có cách xử lý khác nhau bởi ngôn ngữ lập trình
+	// - number: kiểu số, bao gồm cả số nguyên và số thực
+	var age = 32;
+	var number1 = 1.23;
+	console.log(typeof number1); //number
+	// - string: kiểu chuỗi, đc bao bởi nháy đơn hoặc kép
+	var fullname = "manhnv";
+	var str1 = 'manh1';
+	var str2 = "Hello 'manhnv' "; //Hello 'manhnv'
+	// Nối chuỗi: dùng +
+	var str3 = fullname + str1;
+	console.log(typeof str3);//string
+	// - boolean: chỉ bao gồm 2 giá trị duy nhất là true và false viết thường hết
+	var is_male = true;
+	var is_female = false;
+	// var is_check = True; //lỗi
+	console.log(typeof is_male);
+	// Các kiểu dữ liệu number, string, boolean là
+	//kiểu dữ liệu nguyên thủy, có thể tính toán đc
+	// - undefined: xảy ra khi khai báo biến mà ko gán giá trị cho nó
+	var number;
+	console.log(typeof number);
+	// -> luôn gán giá trị mặc định khi khai báo biến
+	var str = '';
+	// - null: chỉ có 1 giá trị duy nhất là null, xảy ra khi gọi đến 1 đối tượng ko tồn tại
+	var test = null;
+	console.log(typeof test); //object
+	// - array: kiểu mảng, có thể lưu trữ đc nhiều giá trị tại 1 thời điểm, giá trị có thể là bất cứ kiểu dữ liệu
+	// Khai báo tên của 500 ae
+	var names = ['manh1', 'manh2', 'manh3'];
+	var arrs = [123, 'str', true, undefined, null, []];
+	console.log(typeof arrs); //object
+	// - object: kiểu đối tượng, có thuộc tính và phương thức
+	var person = {
+		name: 'manhnv',
+		age: 32,
+		run: function() {
+			console.log('The person can run');
+		}
+	};
+	console.log(typeof person); //object
+	// -> Javascript xử lý null và array như 1 object
+
+	// 3 - Hàm
+	// + Có tính sử dụng lại, chức năng sử dụng lần 2 trở nên thì sẽ viết hàm
+	// Viết chức năng cộng hai số:
+	var number1 = 1;
+	var number2 = 2;
+	var sum = number1 + number2;
+	console.log(sum);
+
+	var number1 = 2;
+	var number2 = 3;
+	var sum = number1 + number2;
+	console.log(sum);
+	// - Cú pháp khai báo hàm:
+	function showInfo() {
+		console.log('Hàm đầu tiên');
+	}
+	// Khai báo hàm phải gọi hàm
+	showInfo();
+	// + Quy tắc khai báo tên hàm: giống tên biến
+	// quy tắc camel: con lạc đà
+	// + Phân loại hàm:
+	// - Hàm có sẵn bởi ngôn ngữ
+	// alert('hello');
+	// - Hàm tự định nghĩa
+	// a/ Hàm ko có tham số:
+	function showLog() {
+		console.log('Hàm showLog');
+	}
+	showLog();
+	// b/ Hàm có tham số:
+	// Viết hàm tính tổng 2 số bất kỳ:
+	// Cần xác định các tham số của hàm nếu có
+	function sumNumber(number1, number2) {
+		var sum = number1 + number2;
+		console.log('Tổng = ' + sum);
+	}
+	sumNumber(1, 2);//Tổng = 3
+	sumNumber(2, 2);//Tổng = 4
+	sumNumber(3, 2);//Tổng = 5
+	// Viết hàm hiển thị tên bất kỳ
+	// Xác định tham số:
+	function showFullname(fullname) {
+		console.log("Tên của bạn: " + fullname)
+	}
+	showFullname('manhnv'); //Tên của bạn: manhnv
+	// c/ Hàm có giá trị trả về
+	// Viết hàm tính tổng 2 số:
+	// Xác định tham số: 2 tham số
+	// Xác định giá trị trả về của hàm: cần tư duy thực tế với bài toán hiện tại, giá trị trả về là 1 kiểu dữ liệu, với bài toán hiện tại -> return number;
+	function sumNumber2(number1, number2) {
+		var sum = number1 + number2;
+		// Từ khóa return có 2 tác dụng:
+		// - Làm cho hàm có giá trị trả về
+		// - Thoát hàm, code phía sau return bên trong hàm sẽ ko đc chạy
+		return sum;
+		console.log('Code có chạy ko?');
+	} 
+	// Khi hàm có giá trị trả về, việc gọi hàm sẽ tương đương với 1 giá trị cụ thể nào đó
+	var sum2 = sumNumber2(3, 4); //var sum2 = 7\
+	console.log('Tổng = ' + sum2); //Tổng = 7
+	sum2 += 3; //sum2 = sum2 + 3
+	console.log('Tổng = ' + sum2); //Tổng = 10
+	// Vd: hiển thị tên của ng bất kỳ:
+	// - Xác định tham số: name
+	// - Xác định giá trị về: string
+	function showName2(name) {
+		var result = "Tên của bạn: " + name;
+		return result;
+	}
+	var res1 = showName2('manhnv');
+	// 4 - Một số hàm cơ bản của JS
+	// + Hiển thị text ra trình duyệt
+	document.write('hello'); 
+	// + Hiển thị dạng hộp thoại cảnh báo: alert
+	// + Hiển thị dạng hộp nhập nhập liệu: prompt
+	// var result = prompt('Nhập tên của bạn: ');
+	// console.log(result)
+	// + Hiển thị dạng hộp thoại xác nhận: confirm
+	// var is_cf = confirm('Bạn có chắc chắn muốn xóa user này ?');
+	// console.log(is_cf)
+	// + Chuyển hướng:
+	// window.location = 'https://google.vn';
+	// + Lấy độ dài chuỗi:
+	var str = 'abc';
+	console.log(str.length); //3
+	// + Bật trình gửi mail mặc định của hệ thống:
+	// window.open("mailto:nguyenvietmanhit@gmail.com");
+</script>

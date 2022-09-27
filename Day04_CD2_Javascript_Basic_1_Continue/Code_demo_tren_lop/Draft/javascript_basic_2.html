@@ -1,0 +1,79 @@
+<!-- javascript_basic_2.html -->
+<script>
+	// alert('test');
+	// 1 - Toán tử
+	// Là ký tự để tính toán các biểu thức
+	// 5 + 3 = 9, toán tử là dấu +, 5 3 là toán hạng
+	// - Toán tử số học: thao tác với số
+	var number1 = 5;
+	var number2 = 2;
+	// + Cộng: +
+	var result1 = number1 + number2; //7
+	// + Trừ: -
+	var result2 = number1 - number2; //3
+	// + Nhân: *
+	var result3 = number1 * number2; //10
+	// + Chia: /
+	var result4 = number1 / number2; //2.5
+	// + Chia lấy dư: %
+	var result5 = number1 % number2 = 1;
+	// + Tăng giảm tích lũy 1 đơn vị: ++ --
+	// Giá trị tăng / giảm trước hay sau phụ thuộc vào vị trí của toán tử đó
+	var number = 5;
+	var sum = number++ + number++;
+	//  sum =    5     +   6
+	var x = 5;
+	var sum = --x + x--;
+	//  sum =  4  +  4
+	// 8 9  
+
+	var x = 5;
+	var sum = x++ * ++x + 2 * --x % 2;
+	//35    =  5  *  7  + 2 *  6 % 2
+	// - Toán tử so sánh: so sánh 2 biểu thức, kết quả trả về là kiểu dữ liệu boolean
+	var number1 = 5;
+	var number2 = '5';
+	// + So sánh bằng: ==
+	var result1 = number1 == number2; //true
+	var result2 = number1 === number2; //false
+	// === so sánh cả về giá trị và kiểu dữ liệu, còn == so sánh về giá trị
+	// + So sánh khác: !=
+	var result3 = number1 != 0; //true
+	// + So sánh lớn hơn: >
+	var result4 = number1 > 0; //true
+	// + Lớn hơn hoặc bằng: >=
+	var result5 = number1 >= 5; // true
+	// + So sánh nhỏ hơn: <
+	var result6 = number1 < 0; //false
+	// + Nhỏ hơn hoặc bằng: <=
+	var result7 = number1 <= 5; // true
+	// - Toán tử logic: kết hợp nhiều biểu thức so sánh, trả về boolean
+	// + AND &&
+	// true && true = true
+	// false && true = false
+	// true && false = false
+	// false && false = false
+	var number1 = 4;
+	var number2 = 5;
+	var result1 = (number >= 4) && (number2 > 5);
+	//true && false = false
+	// + OR ||
+	// true || true = true
+	// false || true = true
+	// true || false = true
+	// false  || false = false
+	var result2 = (number1 > 0) || (number2 < 0);
+	//true
+	// + NOT !
+	// !true = false
+	// !false = true
+	var result3 = !(number1 > 0); //false
+	// - Toán tử gán
+	var number = 5; 
+	// Cộng tích lũy
+	number += 2;//number = number + 2 = 7
+	number -= 1;// number = number - 1 = 6
+	number *= 2; //12
+	number /= 3; //4
+	number %= 3; //1
+</script>
