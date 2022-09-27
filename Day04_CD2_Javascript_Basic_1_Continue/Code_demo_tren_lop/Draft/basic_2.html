@@ -1,0 +1,87 @@
+<!-- basic_2.html -->
+<script>
+	// 1 - Toán tử:
+	// + Thực hiện tính toán trên các toán hạng và trả về giá trị nào đó
+	// 3 + 5 = 8
+	// - Toán tử số học: trả về 1 số (number)
+	var number1 = 9; 
+	var number2 = 4;
+	// + Cộng: +
+	var res1 = number1 + number2; //13
+	// + Trừ: -
+	var res2 = number1 - number2; //5
+	// + Nhân: *
+	var res3 = number1 * number2; //36
+	// + Chia: /
+	var res4 = number1 / 3; //3
+	// + Chia lấy dư: %
+	var res5 = number1 % number2; //1
+	// + Tăng giảm tích lũy 1 đơn vị: ++ --
+	var number = 2;
+	number++;
+	console.log(number);//3
+	var x = 3;
+	++x;
+	console.log(x);//3
+	var y = 5;
+	// Toán tử tăng/giảm tích lũy khác biệt về thời điểm tăng/giảm dựa theo nó đứng trước/sau biến
+	var sum = y++ - ++y;
+	// 1 -1    5  -  7 
+	console.log(sum); // -2
+
+	var y = 3;
+	var sum = --y + --y - y++; // 1 -1 2 3
+	//      =  2  +  1  -  1 
+
+	var z = 4;
+	var sum = 2 * --z + z++ * --z; // 9 15  
+	//      = 2 *  3  +   3 *  3
+	// - Toán tử so sánh: so sánh 2 biểu thức, trả về boolean 
+	var number1 = 2;
+	var number2 = 3;
+	// + So sánh bằng: == ===
+	// So sánh == chỉ so sánh về giá trị -> ép kiểu
+	// So sánh  === so sánh cả về giá trị và kiểu dữ liệu
+	var res1 = number1 == number2; // false
+	//  2 == '2' => true
+	//  2 === '2' => false
+	// + So sánh khác: !=
+	var res2 = number1 != number2; //true
+	// + Ss lớn hơn: >
+	var res3 = number1 > number2; //false
+	// + Ss lớn hơn hoặc bằng: >=
+	var res4 = number1 >= number2; //false
+	// + SS nhỏ hơn: <
+	var res5 = number1 < number2; //true
+	// + SS nhỏ hơn hoặc bằng: <=
+	var res6 = number1 <= number2; //true
+	// - Toán tử logic: kết hợp các biểu thức sử dụng toán tử so sánh lại với nhau
+	// + AND: &&
+	// true && true = true
+	// false && true = false
+	// true && false = false
+	// false && false = false
+	var res1 = (2 > 1) && (1 == 0); //true && false = false
+	// + OR: ||
+	// true || true = true
+	// true || false = true
+	// false || true = true
+	// false || false = false
+	var res2 = (3 == 2) || (4 >= 5); //false || false = false
+	// + NOT: !
+	// !true = false
+	// !false = true
+	var res3 = !(4 == 5); //true
+	// - Toán tử gán: gán giá trị bên phải cho biến bên trái của toán tử:
+	var number = 5;
+	// + Cộng tích lũy: +=
+	number +=2; // number = number + 2 = 7
+	// + Trừ tích lũy: -=
+	number -= 1; //number = number - 1 = 6
+	// + Nhân tích lũy: *=
+	number *= 2; //number = number * 2 = 12
+	// + Chia tích lũy: /=
+	number /= 3; //number = number / 3 = 4
+	// + Chia lấy dư tích lũy: %=
+	number %= 3; //number = number % 3 = 1
+</script>

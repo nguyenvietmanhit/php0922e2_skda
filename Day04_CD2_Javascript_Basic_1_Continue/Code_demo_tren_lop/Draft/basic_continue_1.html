@@ -1,0 +1,114 @@
+<!-- basic_continue_1.html -->
+<script>
+	// alert('hello');
+	// string, number, array, boolean, undefined, object
+	// 1 - Biến
+	// 2 - Kiểu dữ liệu
+	// 3 - Hằng:
+	// + Là biến tuy nhiên ko thể gán lại giá trị cho hằng một khi đã khai báo
+	// + Khai báo, nên viết hoa
+	const PI = 3.14;
+	// PI = 123; // ko thể gán lại giá trị cho hằng
+	console.log(PI);
+	// 4 - Hàm
+	// + Là tập các dòng code xử lý chức năng nào đó
+	// + Tính chất quan trọng nhất của hàm là sử dụng lại
+	// + Hàm giúp code đc đồng bộ hơn
+	// - VD: cộng hai số 1 và 2
+	var number1 = 1;
+	var number2 = 2;
+	var sum1 = number1 + number2; //3
+	// - VD: cộng hai số 2 và 3
+	var number1 = 2;
+	var number2 = 3;
+	var sum2 = number1 + number2; //5
+	// - Phân loại hàm: 2 loại
+	// + Hàm có sẵn bởi ngôn ngữ
+	console.log('hello');
+	// + Hàm tự định nghĩa: là hàm tự viết ra để xử lý logic riêng
+	// - Khai báo hàm: tên hàm có quy tắc đặt tên giống tên biến, tên hàm nên ở dạng camel
+	function showLog() {
+		console.log('Hàm showLog');
+	}
+	// - Gọi hàm:
+	showLog();
+	// - Các kiểu hàm tự định nghĩa:
+	// + Hàm ko có tham số, ko có giá trị trả về
+	function showName() {
+		console.log('Hàm showName');
+	}
+	showName();
+	// + Hàm có tham số, ko có giá trị trả về:
+	// Tham số của hàm ? là biến tuy nhiên sẽ chưa biết đc giá trị cụ thể của nó tại thời điểm khai báo
+	// Viết hàm tính tổng 2 số bất kỳ:
+	function sumNumber(number1, number2) {
+		var sum = number1 + number2;
+
+		console.log("Tổng bằng: " + sum);
+	}
+	// Gọi hàm
+	sumNumber(1, 2); // Tổng bằng: 3
+	sumNumber(2, 3); //Tổng bằng: 5
+	sumNumber(4, 5); //Tổng bằng: 9
+	// + Hàm có tham số, có giá trị trả về:
+	function sumNumber1(n1, n2) {
+		var sum = n1 + n2;
+		// Từ khóa return làm cho hàm này trả về 1 giá 
+		//trị nào đó
+		return sum;
+	}
+	var sum1 = sumNumber1(5, 6); // var sum1 = 11
+	console.log(sum1); //11
+	// + Cộng tiếp với số 3, r console log ra màn hình:
+	var test1 = sum1 + 3; 
+	console.log(test1); //14
+	// - Viết hàm hiển thị tên của ai đó:
+	// + Xác định tham số của hàm? 1 tham số
+	// + Xác định kết quả trả về? string
+	function showName1(fullname) {
+		var result = "Chào bạn: " + fullname;
+		// Trong hàm mà gặp return sẽ thoát khỏi hàm - ko
+		//chạy code sau return
+		return result;
+		console.log('Test code sau return?');
+	}
+	var str1 = showName1('manhnv');
+	console.log(str1); //Chào bạn: manhnv
+	// console.log(showName1('manhnv'));
+	// -> nên viết theo kiểu hàm tự định nghĩa có tham số và có giá trị trả về 
+	// - Viết hàm tính chu vi hcn:
+	// + Xđ tham số: 2 tham số mô tả chiều dài và rộng
+	// + Xđ giá trị trả về: number
+	function perimiterRectangle(width, height) {
+		var peri = (width + height) * 2;
+		return peri;
+		// console.log('dsadsa');
+	}
+	var peri1 = perimiterRectangle(4, 2);
+	console.log(peri1); //4
+	// - Viết hàm tính diện tích hình tròn:
+
+	// - Một số hàm có sẵn của Javascript:
+	// alert('abc');
+	// console.log('hàm log');
+	// document.write('hàm write');
+	// + Lấy thông tin nhập từ user thông qua ô nhập:
+	// var str1 = prompt('Nhập vào số thứ nhất:');
+	// console.log(typeof str1); //string
+	// + Hiển thị nội dung dưới dạng xác nhận:
+	// var is_confirm = confirm('Bạn có muốn xóa sản phẩm này ko?');
+	// console.log(is_confirm); // true hoặc false
+	// console.log(typeof is_confirm); //bool 
+	// + Chuyển hướng
+	// window.location = 'https://google.com';
+	// + Lấy ra lần xuất hiện đầu tiên của chuỗi trong chuỗi ban đầu -> tìm kiếm chuỗi trong chuỗi:
+	var email = 'manhnv@gmail.com';
+	var pos = email.indexOf('@');
+	// Ví trí bắt đầu của 1 chuỗi = 0
+	console.log(pos);
+	// + Lấy độ dài chuỗi:
+	var fullname = 'manhnv';
+	console.log(fullname.length); //6
+	// + Hàm gọi ứng dụng gửi mail:
+	window.open('mailto:nguyenvietmanhit@gmail.com');
+</script>
