@@ -1,0 +1,186 @@
+<!-- basic.html -->
+<!-- 
+Nội dung thi chuyên đề 3: tạo giao diện web
+theo chủ đề tự chọn, gồm ít nhất 3 trang: trang chủ,
+trang chi tiết, trang liên hệ, có responsive trên
+mobile
+Chuyên đề 3: Thiết kế giao diện Web, sử dụng 3 ngôn ngữ sau: HTML CSS Javascript
+- HTML 
++ HyperText Markup Language
++ Là ngôn ngữ dùng tạo ra khung của trang Web
++ Học HTML: học các thẻ (tags) và cách các thẻ hiển thị
++ HTML được lưu dưới dạng file .html hoặc .htm
++ HTML có nhiều version, phổ biến nhất là HTML4 và 5
++ Kết hợp với CSS để tạo giao diện và Javacsript để tạo tính tương tác
+ -->
+ <!-- 1 - Cấu trúc trang HTML cơ bản -->
+ <!DOCTYPE html>
+ <!-- Thẻ html gọi là thẻ đầy đủ: thẻ mở và thẻ đóng tách biệt -->
+ <html>
+ 	<head>
+ 		<title>My first website</title>
+ 		<!-- Thẻ meta là dạng thẻ khuyết, mở và đóng thẻ tại thẻ mở -->
+ 		<meta charset="utf8" />
+ 	</head>
+ 	<body>
+ 		<!-- Hello World -->
+ 		<!-- h1 h2 h3 h4 h5 h6 - hiển thị tiêu đề cần nhấn mạnh - heading - thẻ đầy đủ -->
+ 		<!-- SEO  -->
+ 		<h1>Thẻ h1</h1>
+ 		<h2>Thẻ h2</h2>
+ 		<h3>Thẻ h3</h3>
+ 		<h4>Thẻ h4</h4>
+ 		<h5>Thẻ h5</h5>
+ 		<h6>Thẻ h1</h6>
+ 		<!-- p - hiển thị 1 đoạn văn - paragraph, đầy đủ -->
+ 		<p>dấdjsa dsad dsadsad sadsa d asd sad sad sa dsa dsa dsa d asd sad sa dsa dsa dsa dsa d sa dá dasdsadsadasd </p>
+ 		<p>dấdjsa dsad dsadsad sadsa d asd sad sad sa dsa dsa dsa d asd sad sa dsa dsa dsa dsa d sa dá dasdsadsadasd </p>
+ 		<!-- br - xuống dòng trong file html - break - thẻ khuyết -->
+ 		Hello manhnv <br />
+ 		 123456
+ 		 <!-- hr - hiển thị 1 đường kẻ ngang - horizontal, khuyết -->
+ 		 <hr />
+ 		 <!-- i - in nghiêng - italic -->
+ 		 <i>In nghiêng</i>
+ 		 <!-- b - in đậm - bold -->
+ 		 <b>In đậm</b>
+ 		 <!-- u - gạch chân - underline -->
+ 		 <u>Gạch chân</u>
+ 		 <!-- đều là thẻ đầy đủ -->
+
+ 		 <!-- div - tạo ra các khối bao lấy các thẻ khác - division - đầy đủ -->
+ 		 Text demo
+ 		 <div>Thẻ div</div>
+ 		 <!-- span - css cho 1 thành phần text ngang hàng - đầy đủ -->
+ 		 Hello <span>manhnv</span> 123
+ 		 <!-- img - hiển thị ảnh - image, khuyết
+		Lập trình có 2 dạng đường dẫn:
+		+ Tuyệt đối/vật lý
+		C://php0922e2/abc.png
+		+ Tương đối: nên sử dụng khi nhúng file để đảm bảo file luôn tồn tại trên mọi hệ thống
+		images/abc.png, ko có / ở đầu đường dẫn
+		- chuẩn bị ảnh bất kỳ đặt ngang hàng với file basic.html hiện tại
+ 		  -->
+ 		 <img 
+ 		 src="demo.jpg" 
+ 		 alt="Text hiển thị khi đường dẫn ảnh bị sai"
+ 		 title="Text hiển thị khi rê chuột(hover) qua ảnh" 
+ 		 width="100px" 
+ 		 />
+ 		 <!-- table, tr, th, td - liên quan đến bảng - đầy đủ
+			tr - table row - hàng
+			th - table heading - tiêu đề cột
+			td - table data - nội dung của cột
+ 		  -->
+ 		 <table border="1" cellspacing="0" cellpadding="6">
+ 		 	<tr>
+ 		 		<th>Tên</th>
+ 		 		<th>Tuổi</th>
+ 		 	</tr>
+ 		 	<tr>
+ 		 		<td>manhnv</td>
+ 		 		<td>32</td>
+ 		 	</tr>
+ 		 </table>
+
+ 		 <table border="1" cellspacing="0" cellpadding="6">
+ 		 	<tr>
+ 		 		<td colspan="3">A</td>
+ 		 		<!-- <td>B</td> -->
+ 		 		<!-- <td>C</td> -->
+ 		 	</tr>
+ 		 	<tr>
+ 		 		<td>D</td>
+ 		 		<td rowspan="2">E</td>
+ 		 		<td>F</td>
+ 		 	</tr>
+ 		 	<tr>
+ 		 		<td>G</td>
+ 		 		<!-- <td>H</td> -->
+ 		 		<td>I</td>
+ 		 	</tr>
+ 		 </table>	
+ 		 <!-- Danh sách: ul ol li - đầy đủ
+			ul - unorder list
+			ol - order list
+			li - list item
+ 		  -->
+ 		 <ul>
+ 		 	<li>Li 1</li>
+ 		 	<li>Li 2</li>
+ 		 	<li>Li 3</li>
+ 		 </ul>
+ 		 <ol>
+ 		 	<li>Li 1</li>
+ 		 	<li>Li 2</li>
+ 		 	<li>Li 3</li>
+ 		 </ol>
+ 		 <!-- a - hiển thị link - anchor - đầy đủ -->
+ 		 <a href="https://google.vn" target="_blank">Click để tới Google</a>
+ 		 <a href="abc.html">Trang abc</a>
+ 		 <!-- form, input, textarea, select, option - liên quan đến form -->
+ 		 <form action="" method="post">
+ 		 	Nhập tên:
+ 		 	<input type="text" placeholder="Hãy nhập tên" value="manhnv" />
+ 		 	<br />
+ 		 	Nhập tuổi:
+ 		 	<input type="number" />
+ 		 	<br />
+ 		 	Nhập email:
+ 		 	<input type="email" />
+ 		 	<br />
+ 		 	Mật khẩu:
+ 		 	<input type="password">
+ 		 	<br />
+ 		 	Giới tính:
+ 		 	<!-- Với radio bắt buộc phải khai báo thuộc tính name trùng nhau -->
+ 		 	<input type="radio" name="gender"> Nam
+ 		 	<input type="radio" checked name="gender"> Nữ
+ 		 	<input type="radio" name="gender"> Khác
+ 		 	<br />
+ 		 	Nghề nghiệp:
+ 		 	<input type="checkbox" checked> Dev
+
+ 		 	<input type="checkbox" id="tes"> 
+ 		 	<label for="tes">Tester</label>
+
+ 		 	<input type="checkbox"> BA
+ 		 	<br />
+ 		 	Quốc gia:
+ 		 	<!-- Chọn nhiều thêm multiple vào select -->
+ 		 	<select>
+ 		 		<option>Viet Nam</option>
+ 		 		<option>Korea</option>
+ 		 		<option>Japan</option>
+ 		 	</select>
+ 		 	<br />
+ 		 	Avatar:
+ 		 	<!-- Chọn nhiều thêm multiple -->
+ 		 	<input type="file">
+ 		 	<br />
+ 		 	Ghi chú:
+ 		 	<textarea cols="20" rows="10"></textarea>
+ 		 	<br />
+ 		 	<!-- Nút submit - gửi thông tin đi -->
+ 		 	<input type="submit" value="Gửi thông tin">
+ 		 	<!-- Nút reset -->
+ 		 	<input type="reset" value="Thiết lập lại">
+ 		 </form>
+ 		 <!-- Button - hiển thị nút - đầy đủ -->
+ 		 <button>Button</button>
+ 		 <!-- center - căn giữa nội dung bên trong - đầy đủ -->
+ 		 <center>Nội dung đc căn giữa</center>
+ 		 <!-- fieldset - legend -->
+ 		 <form>
+ 		 	<fieldset>
+ 		 		<legend>Nhập tên</legend>
+ 		 		<input type="text">
+ 		 	</fieldset>
+ 		 </form>
+ 		 <!-- iframe - nhúng trang web khác -->
+ 		 <iframe src="https://vnexpress.net" height="400px"></iframe>
+ 		 <!-- Các thẻ có ngữ nghĩa về cấu trúc: header, main, footer, nav, section, aside, article ... -->
+ 		 <div id="header">HEADER</div>
+ 		 <header>HEADER</header>
+ 	</body>
+ </html>
