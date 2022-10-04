@@ -1,0 +1,193 @@
+<!-- demo.html 
+- HTML:
++ Hypertext Markup Language
++ Là ngôn ngữ Frontend tạo ra khung của trang Web
++ Mối liên hệ giữa 3 ngôn ngữ HTML CSS Javascript để tạo
+giao diện Web
++ Học HTML là học gì: thẻ / tag và xem cách các thẻ hiển thị ra màn hình -> HTML học dễ
++ HTML có đuôi file là .html hoặc .htm, phổ biến là .html
+ - Khung của 1 trang web:
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Thẻ meta là thẻ khuyết: ko có thẻ đóng -->
+		<!-- Thẻ đầy đủ là có cả thẻ mở và đóng -->
+		<meta charset="utf8">
+		<title>Demo HTML 1</title>
+	</head>
+	<body>
+		Hello World
+		<!-- - Các thẻ h1 h2 h3 h4 h5 h6: thẻ đầy đủ - heading: hiển thị tiêu đề của 1 nội dung -> SEO -->
+		<h1>Thẻ h1</h1>
+		<h2>Thẻ h2</h2>
+		<h3>Thẻ h3</h3>
+		<h4>Thẻ h4</h4>
+		<h5>Thẻ h5</h5>
+		<h6>Thẻ h6</h6>
+		<!-- Thẻ p - paragraph - Hiển thị 1 đoạn văn -->
+		<p>Đoạn văn 1Đoạn văn 1Đoạn văn 1Đoạn văn 1Đoạn văn 1Đoạn văn 1Đoạn văn 1Đoạn văn 1Đoạn văn 1</p>
+		<p>Đoạn văn 2Đoạn văn 2Đoạn văn 2Đoạn văn 2Đoạn văn 2Đoạn văn 2Đoạn văn 2Đoạn văn 2Đoạn văn 2</p>
+
+		<!-- Thẻ br - break Xuống dòng trong file HTML, thẻ khuyết -->
+		Hello <br>
+		manhnv
+		<!-- Thẻ hr - horizontal: hiển thị 1 đường kẻ ngang, khuyết -->
+		<hr>
+		<!-- Bộ ba thẻ Word: i italic, b bold, u underline -->
+		<i>Thẻ i</i>
+		<b>Thẻ b</b>
+		<u>Thẻ u</u>
+		<!-- Thẻ div - division - Chứa các thẻ khác, dùng để các khối trên trang, chỉ có tác dụng khi có CSS -->
+		<div>Thẻ div</div>
+		<!-- Thẻ span - css text trong cùng 1 nội dung -->
+		Chào bạn, <span>manhnv</span>
+		<!-- Thẻ img - image Nhúng 1 file ảnh, khuyết, cbi sẵn 1 ảnh đặt ngang hàng với file demo.html hiện tại
+		- Có 2 kiểu đường dẫn khi nhúng file:
+		+ Vật lý/tuyệt đối: C:/abc/def.pjg -> ko nên dùng
+		+ Tương đối: so với 1 đường dẫn cụ thể nào đó -> nên dùng
+		 -->
+		<img src="demo.jpg">
+
+		<!-- Tạo thư mục images cùng cấp với file demo.html hiện tại, trong thư mục images copy hình ảnh bất kỳ 
+		demo.html
+		images / demo.jpg
+		-->
+		<img 
+		src="images/demo.jpg" 
+		title="Hiển thị khi rê chuột qua ảnh"
+		alt="Hiển thị khi ảnh ko tồn tại" 
+		width="100px"
+		height="200px" 
+		>
+
+		<!-- Thẻ cấu trúc bảng: table, tr - table row, th - table heading, td - table data -->
+		<table border="1" cellspacing="0" cellpadding="8">
+			<tr>
+				<th>Tên</th>
+				<th>Tuổi</th>
+			</tr>
+			<tr>
+				<td>Mạnh</td>
+				<td>32</td>
+			</tr>
+		</table>
+		<!-- colspan: gộp cột, gộp xong phải bỏ đi số lượng cột tương ứng để tránh phá vỡ cấu trúc bảng -->
+		<table border="1" cellspacing="0" cellpadding="8">
+			<tr>
+				<td colspan="2">Mạnh 1</td>
+				<td>Mạnh 2</td>
+				<!-- <td>Mạnh 3</td> -->
+			</tr>
+			<tr>
+				<td rowspan="2">30</td>
+				<td>31</td>
+				<td>32</td>
+			</tr>
+			<tr>
+				<!-- <td>Add 1</td> -->
+				<td>Add 2</td>
+				<td>Add 3</td>
+			</tr>
+		</table>
+
+		<!-- Thẻ danh sách: ul - unorder list, ol - order list, li - list -->
+		<ul>
+			<li>Li thứ nhất</li>
+			<li>Li thứ 2</li>
+			<li>Li thứ 3</li>
+		</ul>
+		<ol>
+			<li>Li thứ nhất</li>
+			<li>Li thứ 2</li>
+			<li>Li thứ 3</li>
+		</ol>
+		<!-- Thẻ a - anchor -  hiển thị link -->
+		<a href="https://google.vn" target="_blank">
+			Click để tới trang google
+		</a>
+		<!-- Thẻ form: form, input, textarea, select, option: form là thành phần cực kỳ quan trọng với cứ 1 hệ thống nào, là nơi user có thể nhập dữ liệu và gửi đc thông tin đi -->
+		<form action="" method="post">
+			Nhập text:
+			<input type="text" placeholder="Hãy nhập text vào..." value="abc" name="fullname">
+			<br>
+			Nhập số:
+			<input type="number">
+			<br>
+			Nhập email:
+			<input type="email">
+			<br>
+			Nhập mật khẩu:
+			<input type="password">
+			<br>
+			Chọn giới tính:
+			<!-- với radio, bắt buộc phải set thuộc tính name giống nhau cho toàn bộ radio -->
+			<input type="radio" name="gender"> Nam
+			<input type="radio" name="gender"> Nữ
+			<input type="radio" name="gender"> Khác
+			<br>
+			Chọn nghề nghiệp:
+			<input type="checkbox"> Dev
+			<input type="checkbox"> Tester
+			<input type="checkbox"> BA
+			<br>
+			Upload file:
+			<input type="file">
+			<br>
+			Chọn quốc gia:
+			<select>
+				<option>VN</option>
+				<option>Japan</option>
+				<option>Korea</option>
+			</select>
+			<br>
+			Chọn nhiều quốc gia:
+			<select multiple>
+				<option>VN</option>
+				<option>Japan</option>
+				<option>Korea</option>
+			</select>
+			<br>
+			Nhập nhiều dòng:
+			<textarea cols="32" rows="10" placeholder="Nhập nhiều dòng..."></textarea>
+			<br>
+			<!-- Nút submit form : gửi thông tin đi -->
+			<input type="submit">
+			<input type="reset">
+		</form>
+		<!-- Thẻ button: hiển thị 1 nút -->
+		<button>Nút abc</button>
+		<!-- Thẻ center: căn giữa nội dung bên trong -->
+		<center>Nội dung bị căn giữa</center>
+		<!-- Thẻ có ngữ nghĩa liên quan đến cấu trúc trang: header, main, footer, nav, section, article -->
+
+		
+		<!-- Bài tập 7		 -->
+		<form>
+			<table>
+				<tr>
+					<td colspan="2">
+						Feedback Form
+						<hr>
+					</td>
+					<!-- <td></td> -->
+				</tr>
+				<tr>
+					<td>Name: </td>
+					<td>
+						<input type="text">
+					</td>
+				</tr>
+				<tr>
+					<td>Sex: </td>
+					<td>
+						<input type="radio" name="gender"> M
+						<input type="radio" name="gender"> F
+					</td>
+				</tr>
+				<tr></tr>
+				<tr></tr>
+			</table>
+		</form>
+	</body>
+</html>
