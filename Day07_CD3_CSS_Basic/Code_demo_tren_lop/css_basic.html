@@ -1,0 +1,126 @@
+<!-- 
+css_basic.html
+1/ CSS là gì
++ HTML CSS JS
++ Cascading Stylesheet: là ngôn ngữ thiết kế trang web bằng việc định dạng cho HTML
++ Học CSS: học các thuộc tính cơ bản và giá trị
+cơ bản tương ứng: VD: color: red
++ CSS cơ bản: các thuộc tính và CSS nâng cao: 
+dựng layout
++ Responsive: CSS hỗ trợ responsive
++ Thư viện Bootstrap: dựa CSS
++ Cắt giao diện từ file Photoshop
+
+ -->
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<meta charset="utf-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<title>CSS cơ bản phần 1</title>
+ 	<!-- <style type="text/css">
+ 		h2 {
+ 			color: blue;
+ 			background: yellow;
+ 		}
+ 	</style> -->
+ 	<!-- <link rel="stylesheet" href="demo.css" /> -->
+ </head>
+ <body>
+ <!-- 1 - Cú pháp khai báo CSS:
+	selector { property: value; }
+	- selector là đối tượng sẽ bị CSS
+  -->
+  	<h1 style="color: red">Thẻ h1</h1>
+  	<!-- 2 - Khai báo CSS -->
+  	<!-- C1: Inline trong thẻ, sdung thuộc tính style -->
+  	<!-- C2: Inline trong file .html thông qua thẻ style đặt trong thẻ head -->
+  	<h2>Thẻ h2</h2>
+  	<!-- C3: External từ file .css bên ngoài, tạo file demo.css cùng cấp .html hiện tại -->
+  	<h3>Thẻ h3</h3>
+  	<!-- C1 ít khi sử dụng vì code phức tạp và ko có tính sử dụng lại -->
+  	<!-- C2 ko sử dụng lại đc khi có nhiều trang -->
+  	<!-- C3: là cách thực tế khi thiết kế web -->
+
+  	<!-- 3 - Một số selector cơ bản trong CSS-->
+  	<!-- + Selector theo tên thẻ -->
+  	<style type="text/css">
+  		h4 {
+  			color: red;
+  		}
+  	</style>
+  	<h4>Thẻ h4</h4>
+  	<h4>Thẻ h4 thứ 2</h4>
+
+  	<!-- + Select theo TT id và class -->
+  	<style type="text/css">
+  		/*Dùng id khi nào? duy nhất*/
+  		#p-id {
+  			color:  red;
+  		}
+  		/*Dùng class khi nào? nhiều*/
+  		.p-class {
+  			color: green;
+  		}
+  	</style>
+  	<p id="p-id">Thẻ p id</p>
+  	<p class="p-class">Thẻ p class</p>
+  	<span class="p-class p-class1 p-class2">Thẻ span class</span>
+
+  	<!-- + Selector theo cấp -->
+  	<style type="text/css">
+  		#personal a {
+  			color: green;
+  		}
+  	</style>
+  	<a href="#">Thẻ a bên ngoài</a>
+  	<div id="personal">
+  		<a href="#">Thẻ a bên trong</a>
+  	</div>
+
+  	<!-- + Selector theo thuộc tính thẻ -->
+  	<style type="text/css">
+  		input[type=text] {
+  			background: red;
+  		}
+  	</style>
+  	<form>
+  		Nhập tên: <input type="text" />
+  		Nhập tuổi: <input type="number" />
+  		Nhập email: <input type="email" />
+  	</form>
+
+  	<!-- + Selector theo trạng thái  -->
+  	<!-- Hover -->
+  	<style type="text/css">
+  		#p-hover:hover {
+  			background: blue;
+  		}
+  	</style>
+  	<p id="p-hover">Hover để đổi màu nền</p>
+  	<!-- Vị trí trong cấu trúc cha con trực tiếp -->
+  	<style type="text/css">
+  		ul li:first-child {background: red;}
+  		ul li:last-child {background: green;}
+  		ul li:nth-child(2) {background: yellow;}
+  		ul li:nth-child(3) {background: blue;}
+
+  		/*CSS theo after before*/
+  		#a-pos:before {
+  			content: 'Nội dung trc thẻ a';
+  		}
+  		#a-pos:after {
+  			content: 'Nội dung sau thẻ a';
+  		}
+  	</style>
+
+  	<a href="#" id="a-pos">Thẻ a ban đầu</a>
+
+  	<ul>
+  		<li>Thẻ li đầu tiên</li>
+  		<li>Thẻ li thứ 2</li>
+  		<li>Thẻ li thứ 3</li>
+  		<li>Thẻ li cuối cùng</li>
+  	</ul>
+ </body>
+ </html>

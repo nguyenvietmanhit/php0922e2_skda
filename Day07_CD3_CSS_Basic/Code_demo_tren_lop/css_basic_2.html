@@ -1,0 +1,66 @@
+<!-- css_basic_2.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Các thuộc tính cơ bản của CSS</title>
+</head>
+<body>
+	<style type="text/css">
+		/*1 - Background: màu nền*/
+		#h1-bg {
+			/*Màu trong CSS: 
+			đơn sắc: red, write ...;
+			hecxa: màu trộn, #abcdef, #fff = #ffffff
+			rgb:  red green blue;
+			*/
+			/*Nền là ảnh, cbi ảnh cùng cấp file hiện tại*/
+			/*background-color: #471a1a;
+		    background-image: url(avatar.jpg);
+		    background-repeat: no-repeat;
+		    background-position: center;*/
+		    background-size: cover;
+		    /*Thuộc tính gộp: */
+		    background: #471a1a url(avatar.jpg) no-repeat center;
+		}
+		/*2 - Font:  */
+		#h2-font {
+		    font-size: 33px;
+		    font-weight: bold;
+		    font-style: italic;
+		    /*Tên font family lấy từ đường dẫn:
+			C/:Windows/Fonts;
+		    */
+		    font-family: Gigi Regular;
+		}
+		/*3 - Text */
+		#h3-text {
+		    color: red;
+		    text-align: center;
+		    text-decoration: underline;
+		    text-transform: uppercase;
+		    text-shadow: 3px 3px 3px blue;
+		    line-height: 30px;
+		}
+		/*4 - Border*/
+		#div-border {
+		    /*border-width: 3px;
+		    border-style: solid;
+		    border-color: red;*/
+		    /*Gộp: ;*/
+		    border: 3px solid red;
+
+		    border-radius: 10px;
+		}
+
+	</style>
+	<div id="div-border">Div border</div>
+
+	<h3 id="h3-text">Thẻ h3 text</h3>
+
+	<h2 id="h2-font">H2 font</h2>
+
+	<h1 id="h1-bg">H1 bg</h1>
+</body>
+</html>
