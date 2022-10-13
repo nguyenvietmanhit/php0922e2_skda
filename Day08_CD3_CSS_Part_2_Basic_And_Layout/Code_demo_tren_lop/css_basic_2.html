@@ -1,0 +1,109 @@
+<!-- css_basic_2.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CSS cơ bản phần 2</title>
+</head>
+<body>
+	<style type="text/css">
+		/*1 - Margin:  khoảng cách giữa các phần tử HTML liền kề*/
+		#div-mg-1 {
+			background: red;
+			margin-bottom: 20px;
+		    margin-left: 30px;
+		    margin-top: 40px;
+		    margin-right: 10px;
+		}
+		#div-mg-2 {
+			background: blue;
+		}
+
+		/*2 - Padding:  */
+		#div-pd {
+			background: green;
+			padding-top: 10px;
+		    padding-left: 20px;
+		    padding-bottom: 30px;
+		    padding-right: 40px;
+		    /*Gộp: */
+		    /*4 giá trị: top right bottom left*/
+		    padding: 10px 20px 30px 40px;
+		    /*2 giá trị: top-bottom left-right*/
+		    padding: 3px 4px;
+		    /*1 giá trị: top-bottom-left-right*/
+		    padding:  5px;
+		}
+		/* 3 - Width , height */
+		#wh {
+			background: yellow;
+			width: 200px;
+    		height: 60px;
+		}
+		/* 4 - Position: cơ chế di chuyển phần tử HTML ko ảnh hưởng đến HTML xung quanh */
+		/*+ fixed: vị trí cố định, dựa vào 4 cạnh body để căn */
+		#pos-fixed {
+			background: green;
+			width: 100px;
+			height: 100px;
+			position: fixed;
+		    bottom: 20px;
+		    right: 0;
+		}
+		/*+ relative: vị trí tương đối, lấy chính vị trị hiện tại để căn */
+		#pos-rel {
+			background: brown;
+			width: 60px;
+			height: 60px;
+			position: relative;
+		    right: 1000px;
+		    top: 10px;
+		}
+		/*+ absolute: vị trí tuyệt đối, dùng theo cấu trúc HTML cha con, con absolute, cha relative*/
+		#parent {
+			background: green;
+			width: 200px;
+			height: 200px;
+			position: relative;
+		}
+		#pos-abs {
+			background: red;
+			width: 50px; 
+			height: 50px;
+			position: absolute;
+		    right: -30px;
+		    z-index: 2;
+		}
+		/* 5 - Overflow: các hiển thị khi nội dung bị tràn */
+		#div-ov {
+			background: blue;
+			width: 50px;
+		    overflow: hidden;
+		    opacity: 0.5;
+		}
+		/*6 - Opacity:  độ mờ:  0 - 1*/
+	</style>
+
+	<div id="three-dot">
+		abcdsa dsa dsa dsa dá d sad sad sad sad á d sad sa d sad sad á đá á ds asd 
+	</div>
+
+
+	<div id="div-ov">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+	<!-- <div id="parent">
+		<div id="pos-abs">Pos absolute</div>
+	</div> -->
+
+	<div id="pos-rel">Div relative</div>
+
+	<div id="pos-fixed">Div fixed</div>
+
+	<div id="wh">div width height 123 45 45 454 5454 5 45 45 45 45 4 54</div>
+
+	<div id="div-pd">Div padding</div>
+
+	<div id="div-mg-1">Div mg 1</div>
+	<div id="div-mg-2">Div mg 2</div>
+</body>
+</html>

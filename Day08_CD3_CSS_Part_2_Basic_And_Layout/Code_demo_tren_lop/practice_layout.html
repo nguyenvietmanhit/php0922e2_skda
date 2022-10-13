@@ -1,0 +1,70 @@
+<!-- practice_layout.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Demo bài tập 2</title>
+</head>
+<body>
+	<!-- 
+	- Dựng giao diện HTML CSS:
+	+ Dựng HTML trước: cần phân tích trang web, chia làm các hàng, nếu hàng nào có cấu trúc layout (1 hàng 2 cột trở lên) thì cần áp dụng HTML dạng cha con để cbi cho css flex về sau
+	+ Code CSS
+	 -->
+	 <style type="text/css">
+	 	.container {
+		    border: 2px solid #000;
+		    padding: 5px;
+		    max-width: 60%;
+		    margin: 0 auto;
+		}
+		.header {
+		    border: 2px solid #000;
+		    padding: 4px 0;
+		    text-align: center;
+		    text-transform: uppercase;
+		    margin-bottom: 10px;
+		    font-weight: bold;
+		}
+
+		.row {
+		    display: flex;
+		}
+
+		.sidebar {
+		    width: 15%;
+		    border: 2px solid #000;
+		    text-align: center;
+		    padding: 30px 0;
+		}
+
+		.content {
+		    width: 85%;
+		    border: 2px solid #000;
+		    padding: 30px 0;
+		    text-align: center;
+		    margin-left: 10px;
+		}
+	 </style>
+
+	 <div class="container">
+	 	<!-- HEADER -->
+	 	<div class="header">Header</div>
+	 	<!-- /HEADER -->
+
+	 	<!-- MAIN CONTENT -->
+	 	<div class="main-content">
+	 		<div class="row">
+	 			<div class="sidebar">Sidebar</div>
+	 			<div class="content">Content</div>
+	 		</div>
+	 	</div>
+	 	<!-- /MAIN CONTENT -->
+
+	 	<!-- FOOTER -->
+	 	<div class="footer">Footer</div>
+	 	<!-- /FOOTER -->
+	 </div>
+</body>
+</html>

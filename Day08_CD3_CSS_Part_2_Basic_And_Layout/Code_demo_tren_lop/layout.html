@@ -1,0 +1,89 @@
+<!-- 
+	layout_css.html
+1 - Layout là gì:
+Là bố cục của 1 trang web, là cấu trúc hàng và cột
+- Thẻ table??
+2 - Các kỹ thuật dựng layout:
++ table: cấu trúc phức tạp và rất khó để responsive -> ko nên dùng
++ css position: ko dùng vì sự phức tạp và khó responsive
++ float: có thể dùng nhưng ko ưu tiên vì có khả năng làm vỡ cấu trúc layout (hàng cột)
++ flex: ưu tiên dùng vì đơn giản và ko vỡ layout
++ grid: tự tìm hiểu
+
+3 - Kiểu hiển thị inline và block
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Demo layout</title>
+</head>
+<body>
+	<style type="text/css">
+		/*3 - Inline và block*/
+		/* Block: p h div ul ol ... */
+		/* Inline: b i u a span ... */
+		/* - Nên dùng display:  inline-block thay cho inline để có tính chất margin top bottom */
+		li {
+		    background: red;
+		    display: inline-block;
+		}
+
+		/* 4 - Dựng layout với float: float cho các item trước sau đó set width
+		- Chú ý tránh vỡ giao diện: luôn phải đảm bảo tổng width trên 1 hàng ko đc vượt quá 100%; phải clear: both ở phần tử ngay sau float cuối cùng;
+		 */
+		.item1 {
+			background: red;
+			float: left;
+    		width: 33.3%;
+		}
+		.item2 {
+			background: blue;
+			float: left;
+    		width: 33.3%;
+		}
+		.item3 {
+			background: green;
+			float: left;
+    		width: 33.3%;
+		}
+		/* 1 hàng 3 cột bằng nhau */
+
+		/*5 - Dựng layout với flex: chỉ áp dụng cho cấu trúc HTML dạng cha con*/
+		.col1 {background: blue;}
+		.col2 {background: red;}
+		.col3 {background: green;}
+		.col4 {background: pink;}
+		.row {
+		    display: flex;
+		}	
+		.col {width: 25%;}
+		/*Flex tính chất mặc định là luôn giữ các cột trên 1 hàng ko qtrong về tổng width, ko ảnh hưởng đến phần tử phía sau -> tránh đc vỡ giao diện*/
+	</style>
+	<div class="row">
+		<div class="col1 col">Col 1</div>
+		<div class="col2 col">Col 2</div>
+		<div class="col3 col">Col 3</div>
+		<div class="col4 col">Col 4</div>
+	</div>
+
+
+	<div class="item1 item">Item1</div>
+	<div class="item2 item">Item2</div>
+	<div class="item3 item">Item3</div>
+
+	<ul>
+		<li><a href="#">Link 1</a></li>
+		<li><a href="#">Link 2</a></li>
+		<li><a href="#">Link 3</a></li>
+		<li><a href="#">Link 4</a></li>
+	</ul>
+
+
+	<div>Thẻ div</div> abcdef
+	<br />
+	<span>Thẻ span</span> 123456
+</body>
+</html>
+
