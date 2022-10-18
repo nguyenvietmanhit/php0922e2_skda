@@ -1,0 +1,130 @@
+<!-- index.html
+Cắt giao diện:
+- Chuyển đổi giao diện từ 1 file thiết kế (PS, AI ...) về HTML CSS JS
+- Chuyển đổi chỉ cần tương đối về mặt khoảng cách, còn lại là phải chính xác tuyệt đối về text, ảnh, màu sắc, font chữ
+- Tập trung vào kỹ năng dựng layout là chính
++ Các bước cắt giao diện:
+B1: Tạo cấu trúc thư mục:
+psd_demo /
+         /fonts : lưu các font lấy từ file thiết kế
+         /images: lưu các ảnh cắt từ file thiết kế
+         /css: chứa các file .css
+             /style.css: 
+         /js: chứa các file .js
+            /script.js
+         index.html: file code HTML
+B2: Cắt ảnh từ PS
+PHím tắt:
+Alt Chuột giữa hoặc Ctrl + - -> zoom 
+Giữ Space Chuột trái -> di chuyển (Move)
+Ctrl Alt Z -> undo nhiều lần
++ Ảnh là thứ ko thể dùng HTML CSS để tạo ra đc
+B3: Lấy font chữ từ PS
+: Dùng công cụ T để ktra font, với các font mà
+hệ thống chưa có thì cần download về -> search gg
+Pacifico
+- Nhúng font vào hệ thống sử dụng CSS
+B4: Coding ..............
+Code HTML -> CSS -> JS
+Code HTML cần phải đặt class và dựng sẵn cấu trúc layout nếu có
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Cắt giao diện bt1</title>
+	<!-- Nhúng file css js -->
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="js/script.js"></script>
+</head>
+<body>
+	<div class="container-fluid">
+		<!-- HEADER -->
+		<header class="header">
+			<div class="h-container container">
+				<div class="row">
+					<div class="logo">Bloom</div>
+					<div class="menu">
+						<ul>
+							<li><a href="#">Home</a></li>
+							<li><a href="#">About Us</a></li>
+							<li><a href="#">Services</a></li>
+							<li><a href="#">Porfolio</a></li>
+							<li><a href="#">Contact Us</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- /HEADER -->
+
+		<!-- MAIN -->
+		<main class="main">
+			<div class="main-top">
+				<div class="container">
+					<div class="row">
+						<div class="article">
+							<h2 class="h-article">Lorem</h2>
+							<div class="des">
+								<p>P1 1111</p>
+								<p>P2 2222</p>
+							</div>
+							<a href="#" class="learn-more">
+								Learn more
+							</a>
+						</div>
+						<div class="main-image">
+							<img src="images/main.jpg" class="main-img">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="main-middle">
+				<div class="container">
+					<h2 class="h-middle">
+						This is a Heading
+					</h2>
+					<div class="row">
+						<div class="middle-item">
+							<div class="rectangle"></div>
+							<h3 class="h3-middle">Abc</h3>
+							<p class="des-middle">Def</p>
+							<a href="#" class="learn-more">
+								Learn More
+							</a>
+						</div>
+						<div class="middle-item">
+							<div class="rectangle"></div>
+							<h3 class="h3-middle">Abc</h3>
+							<p class="des-middle">Def</p>
+							<a href="#" class="learn-more">
+								Learn More
+							</a>
+						</div>
+						<div class="middle-item">
+							<div class="rectangle"></div>
+							<h3 class="h3-middle">Abc</h3>
+							<p class="des-middle">Def</p>
+							<a href="#" class="learn-more">
+								Learn More
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="main-bottom">
+				<div class="container"></div>
+			</div>
+		</main>
+		<!-- /MAIN -->
+
+		<!-- FOOTER -->
+		<footer class="footer">
+			<div class="f-container container"></div>
+		</footer>
+		<!-- /FOOTER -->
+	</div>
+</body>
+</html>
