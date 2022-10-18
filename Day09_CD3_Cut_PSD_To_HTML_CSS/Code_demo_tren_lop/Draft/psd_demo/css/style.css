@@ -1,0 +1,6 @@
+/*css/style.css*/
+/*Code nhúng font từ bên ngoài*/
+@font-face {
+	font-family: 'Pacifico-Regular';
+	src:  url(../fonts/Pacifico-Regular.ttf);
+}
