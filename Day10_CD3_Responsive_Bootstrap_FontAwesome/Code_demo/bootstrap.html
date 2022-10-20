@@ -1,0 +1,111 @@
+<!-- bootstrap.html 
+- Thư viện Bootstrap:
++ Thư viện là gì: là những cái mà ko bạn tạo ra
++ Bootstrap là 1 thư viện tích hợp sẵn HTML CSS Javscript, cung cấp nhiều tính năng hữu ích như layout, component, responsive ...
++ Đc tích hợp sẵn vào nhiều Framework / CMS PHP như
+Laravel, Wordpress ...
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Thư viện Bootstrap</title>
+	<!-- 1 - Tích hợp Bootstrap: 2 cách
+	- Download các file thủ công
+	- Sử dụng link CDN (Content Delivery Network):
+	bootstrap 4 link cdn
+	 -->
+	 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+	<h1>Thẻ h1</h1>
+	<!-- Học Bootstrap:
+	- Layout
+	- Component
+	 -->
+
+	 <h2>Layout: PC 1 hàng 4 cột bằng nhau, Mobile 2 hàng, mỗi hàng 2 cột bằng nhau</h2>
+	 <style type="text/css">
+	 	.col1 {background: red;}
+	 	.col2 {background: blue;}
+	 	.col3 {background: green;}
+	 	.col4 {background: yellow;}
+	 </style>
+	 <div class="container">
+	 	<!-- 1 hàng Bootstrap chia thành 12 khối bằng nhau: 1 hàng 4 cột bằng nhau => mỗi cột = 3 khối -->
+	 	<div class="row">
+	 		<div class="col1 col-md-3 col-8">Col1</div>
+	 		<div class="col2 col-md-3 col-4">Col2</div>
+	 		<div class="col3 col-md-3 col-2">Col3</div>
+	 		<div class="col4 col-md-3 col-10">Col4</div>
+	 	</div>
+	 </div>
+
+	 <!-- Component -->
+
+
+	 
+	 <div class="alert alert-primary" role="alert">
+  This is a primary alert—check it out!
+</div>
+<div class="alert alert-secondary" role="alert">
+  This is a secondary alert—check it out!
+</div>
+<div class="alert alert-success" role="alert">
+  This is a success alert—check it out!
+</div>
+<div class="alert alert-danger" role="alert">
+  This is a danger alert—check it out!
+</div>
+<div class="alert alert-warning" role="alert">
+  This is a warning alert—check it out!
+</div>
+<div class="alert alert-info" role="alert">
+  This is a info alert—check it out!
+</div>
+<div class="alert alert-light" role="alert">
+  This is a light alert—check it out!
+</div>
+<div class="alert alert-dark" role="alert">
+  This is a dark alert—check it out!
+</div>
+
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-light">Light</button>
+<button type="button" class="btn btn-dark">Dark</button>
+
+<button type="button" class="btn btn-link">Link</button>
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="https://media.istockphoto.com/photos/sun-reflecting-in-the-rear-view-mirror-picture-id1157172920?k=20&m=1157172920&s=170667a&w=0&h=Jhuvgmy4O5T7rIKXKR_g6K7wvuSCNxtYBjEpcm1uR8I=" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://media.istockphoto.com/photos/sun-reflecting-in-the-rear-view-mirror-picture-id1157172920?k=20&m=1157172920&s=170667a&w=0&h=Jhuvgmy4O5T7rIKXKR_g6K7wvuSCNxtYBjEpcm1uR8I=" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://media.istockphoto.com/photos/sun-reflecting-in-the-rear-view-mirror-picture-id1157172920?k=20&m=1157172920&s=170667a&w=0&h=Jhuvgmy4O5T7rIKXKR_g6K7wvuSCNxtYBjEpcm1uR8I=" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+</body>
+</html>

@@ -89,3 +89,47 @@ body {
 	/*Kỹ thuật fix thẳng lề cho các cột bên trong flex*/
 	margin: 0 -20px;
 }
+
+/* psd_demo/css/style.css */
+
+/*Ipad*/
+@media(min-width: 768px) and (max-width:  1023) {
+
+}
+
+/*Mobile*/
+@media(max-width:  767px) {
+    .header {
+        background: red;
+    }
+
+    .row {
+        /*Cần bỏ cơ chế luôn giữ các cột bên trong
+        nằm trên 1 hàng - mặc định của flex*/
+        flex-wrap:  wrap;
+    }
+
+    .logo, .menu {
+        width: 100%;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+
+    .logo {
+        text-align: center;
+    }
+
+    .menu li {
+        margin: 0 2px;
+    }
+
+    ul {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+
+}
