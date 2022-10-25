@@ -1,0 +1,101 @@
+<!-- js_event.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Xử lý sự kiện với Javascript</title>
+</head>
+<body>
+	<!-- 
+	- Học JS theo hướng: xác định cách thức làm thế nào để JS tương tác đc với HTML -> sự kiện
+	 -->
+	 <h1 onclick="alert('Hello')">
+	 	Click để hiển thị cảnh báo
+	 </h1>
+
+	 <a id="a-click">Click để show cảnh báo</a>
+
+	 <select id="country">
+	 	<option value="vn">Việt Nam</option>
+	 	<option value="kr">Korea</option>
+	 	<option value="jp">Japan</option>
+	 </select>
+
+	 <h2 id="hover">Demo sự kiện hover sử dụng JS</h2>
+	 <input type="text" id="fullname">
+
+	 <form id="form">
+	 	Nhập tuổi:
+	 	<input type="text" id="age">
+	 	<input type="submit" value="Hiển thị tuổi">
+	 </form>
+	 <!-- Thẻ chờ để hiển thị kết quả từ form -->
+	 <h3 id="result"></h3>
+
+	 <script>
+	 	// - Các sự kiện cơ bản của JS:
+	 	// + onsubmit: xảy ra 1 form gửi dữ liệu đi, chỉ áp dụng trên đối tượng form
+	 	// - Lấy obj:
+	 	var obj_form = document.querySelector('#form');
+	 	// - Gắn sk:
+	 	obj_form.addEventListener('submit', function() {
+	 		// Lấy obj tuổi
+	 		var age = document.querySelector('#age').value;
+	 		//Đổ dữ liệu ra thẻ h3
+	 		document.querySelector('#result').innerHTML = 
+	 		"Tuổi của bạn: " + age;
+	 		// Ngăn ngừa trang tải lại sau khi submit
+	 		// event là 1 đối tượng có sẵn của JS, chỉ tồn tại bên trong 1 hàm callback
+	 		event.preventDefault();
+	 	})
+
+	 	// + onload: xảy ra sau khi toàn bộ trang HTML CSS đc tải xong
+	 	// + onkeydown, onkeypress
+	 	// + onkeyup: xảy ra khi nhấn phím và nhả phím ra
+	 	// - Lấy obj:
+	 	var obj_fullname = document.querySelector('#fullname');
+	 	// - Gắn sk
+	 	obj_fullname.addEventListener('keyup', function() {
+	 		var fullname = this.value;
+	 		console.log(fullname);
+	 	});
+
+	 	// + onmouseenter và onmouseleave
+	 	// - Lấy obj:
+	 	var obj_h2 = document.querySelector('#hover');
+	 	// - Gắn sk:
+	 	obj_h2.addEventListener('mouseenter', function() {
+	 		this.style = "background-color: red";
+	 		// this.style.backgroundColor = 'red';
+	 	});
+	 	obj_h2.addEventListener('mouseleave', function() {
+	 		this.style = "background-color: white";
+	 	})
+
+	 	// + onchange: xảy ra khi thay đổi giá trị của select, radio và checkbox
+	 	// - Lấy obj:
+	 	var obj_country = document.querySelector('#country');
+	 	// - Gắn sự kiện:
+	 	obj_country.addEventListener('change', function() {
+	 		// Một đối tượng có truy cập thuộc tính của nó
+	 		// Sử dụng this để gọi đến đúng đối tượng hiện tại
+	 		var opt_value = this.value;
+	 		alert(opt_value)
+	 		var name = this.options[this.selectedIndex].text;
+	 		alert(name);
+	 	});
+
+	 	// + onclick: khi click vào selector
+	 	// - Lấy ra đối tượng theo selector
+	 	var obj_click = document.querySelector('#a-click');
+	 	console.log(obj_click);
+	 	// - Gắn sự kiện cho đối tượng đó:
+	 	// Hàm callback: thực thi sau khi sự kiện trc nó xảy ra xong
+	 	obj_click.addEventListener('click', function() {
+	 		// Code bên trong hàm callback
+	 		alert('Clicked!');
+	 	});
+	 </script>
+</body>
+</html>
