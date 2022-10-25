@@ -1,0 +1,93 @@
+<!-- process_form.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Xử lý form với JS</title>
+</head>
+<body>
+	<form id="form">
+		Nhập tên:
+		<input type="text" id="fullname">
+		<br>
+		Nhập tuổi:
+		<input type="text" id="age">
+		<br>
+		Chọn giới tính:
+		<input type="radio" name="gender" value="female">Nữ
+		<input type="radio" name="gender" value="male">Nam
+		<br>
+		<input type="submit" value="Hiển thị">
+		<input type="reset" value="Reset form">
+	</form>
+	<!-- Khai báo thẻ ko có nội dung, chờ hiển thị -->
+	<h3 id="error" style="color: red"></h3>
+	<h3 id="result" style="color: green"></h3>
+
+	<script type="text/javascript">
+		// Xử lý form với JS
+		// - Lấy obj form:
+		var obj_form = document.querySelector('#form');
+		// - Gắn sự kiện submit
+		obj_form.addEventListener('submit', function() {
+			// - Quy trình xử lý form:
+			// B1: Tạo biến chứa lỗi và kết quả
+			var error = '';
+			var result = '';
+			// B2: Lấy giá trị các input trong form
+			// + Lấy tên:
+			var obj_fullname = document.querySelector('#fullname');
+			var fullname = obj_fullname.value;
+			console.log(fullname);
+			// + Lấy tuổi:
+			var obj_age = document.querySelector('#age');
+			var age = obj_age.value;
+			console.log(age);
+			// + Lấy giới tính: lấy dựa trên radio nào đang đc checked
+			var obj_gender = document
+				.querySelector('input[name=gender]:checked');
+			// var gender = obj_gender.value;
+			// console.log(gender);
+			// B3: Validate form: lọc dữ liệu đầu vào, có lỗi validate đổ vào biến error
+			// - Tên, tuổi phải nhập, giới tính phải chọn
+			// - Tuổi phải là số
+			if (fullname == '') {
+				error = 'Tên phải nhập';
+				// Focus chuột vào obj hiện tại:
+				obj_fullname.focus();
+			} else if (age == '') {
+				error = 'Tuổi phải nhập';
+				obj_age.focus();
+				// isNaN = is not a number, true = ko phải số và ngược lại
+			} else if (isNaN(age)) {
+				error = 'Tuổi phải là số';
+				obj_age.focus();
+			} else if (obj_gender == null) {
+				error = 'Phải chọn giới tính';
+			}
+			// B4: Xử lý logic chính bài toán chỉ khi hệ thống ko có lỗi nào xảy ra:
+			if (error == '') {
+				result += "Tên: " + fullname;
+				result += "<br> Tuổi: " + age;
+				// Lấy giới tính:
+				var gender = obj_gender.value;
+				if (gender == 'female') {
+					result += "<br> Giới tính: Nữ";
+				} else {
+					result += "<br> Giới tính: Nam";
+				}
+			}
+			// B5: Đổ error và result ra form HTML
+			// Lấy obj trước và set giá trị cho obj:
+			document.querySelector('#error').innerHTML = error;
+			document.querySelector('#result').innerHTML = result;
+			// - Để giữ lại các giá trị trên, cần ngăn ngừa hành vi tải lại trang mặc định sau khi submit form:
+			// biến event là obj chỉ có sẵn bên trong hàm callback của 1 sự kiện
+			event.preventDefault();
+		});
+
+		
+	</script>
+</body>
+</html>

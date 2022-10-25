@@ -1,0 +1,136 @@
+<!-- demo_js.html 
+- Javascript:
++ Là 1 ngôn ngữ lập trình phía Frontend
++ Với website, Javascript giúp tăng tính tương tác cho Web
++ Học JS theo 2 hướng:
+- Các kiến thức của lập trình :CD2
+- Tính tương tác cho Web: CD3, thông qua các event
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Xử lý sự kiện trong JS</title>
+</head>
+<body>
+	<h1 onclick="alert('Clicked!')" >
+		Click thẻ h1 để hiển thị cảnh báo
+	</h1>
+
+	<script type="text/javascript">
+		// 1 - Có 3 cách nhúng code JS
+		// + Nhúng inline trong thẻ HTML thông qua tên sự kiện: onclick, onchange ...
+		// + Nhúng inline trong file HTML thông qua script
+		// + Tách ra 1 file .js
+
+	</script>
+	<!-- <script src="abc.js"></script> -->
+
+	<h2 id="h2-click">Demo sự kiện onclick</h2>
+
+	<select id="country">
+		<option value="vn">Việt Nam</option>
+		<option value="jp">Nhật Bản</option>
+		<option value="kr">Hàn Quốc</option>
+	</select>	
+	<h3 class="h3-hover"  >Sự kiện onmouseenter+onmouseleave</h3>
+
+	<input type="text">
+	<input type="number">
+
+	<form class="form">
+		Nhập tên:
+		<input type="text">
+		<input type="submit" value="Hiển thị">
+	</form>
+
+	<script type="text/javascript">
+		// 2 - Các sự kiện cơ bản trong JS
+		// + onsubmit: xảy ra khi submit, chỉ áp dụng cho thẻ form
+		// B1:
+		var obj_form = document.querySelector('.form');
+		obj_form.addEventListener('submit', function() {
+			alert('submit');
+		})
+
+		// + onkeyup: xảy ra khi nhấn 1 phím và ra nhả ra: áp dụng với các input
+		// B1: Lấy obj:
+		var obj_input = document
+						.querySelector('input[type=text]');
+		// B2: Gắn sự kiện:
+		obj_input.addEventListener('keyup', function() {
+			var val = this.value;
+			console.log("onkeyup:" + val);
+		})
+		// onkeydown: xảy ra ngay khi nhấn phím
+		obj_input.addEventListener('keydown', function() {
+			var val = this.value;
+			console.log("onkeydown:" + val);
+		})
+		// onfocus và onblur: ra khỏi và ở trong input
+		obj_input.addEventListener('focus', function(){
+			this.style = "background: red";
+		})
+		obj_input.addEventListener('blur', function(){
+			this.style = "background: #fff";
+		})
+
+		// + onmouseenter và onmouseleave: xảy ra khi đi vào và đi ra 1 phần tử , luôn đi kèm nhau
+		// B1: Lấy obj:
+		var obj_h3 = document.querySelector('.h3-hover');
+		// B2: Gắn sự kiện
+		obj_h3.addEventListener('mouseenter', function() {
+			this.style = "color: red";
+		});
+		obj_h3.addEventListener('mouseleave', function() {
+			this.style = "color: black";
+		});
+
+
+		// + onchange: xảy ra khi thay đổi giá trị của thẻ select, radio, checkbox
+		// B1: Lấy obj:
+		var obj_country = document.querySelector('#country');
+		// B2: Gắn sự kiện
+		obj_country.addEventListener('change', function() {
+			// - Lấy thuộc tính value của obj hiện tại:
+			// Có thể sử dụng this thay thế khi đang tham chiếu đến đúng obj hiện tại
+			var val = this.value;
+			// alert(val);
+			// - Lấy text bên trong option:
+			var text = this.options[this.selectedIndex].text;
+			alert(text);
+		});
+
+
+
+
+		// + onclick: xảy ra khi click 1 phần tử, áp dụng cho toàn bộ thẻ HTML
+		// Cần 2 bước:
+		// B1: Lấy ra đối tượng muốn gắn sự kiện
+		var obj_h2 = document.querySelector('#h2-click');
+		console.log(obj_h2);
+		// B2: Gắn sự kiện cho obj trên:
+		// Hàm callback là 1 hàm ko có tên hàm, chờ khi sự kiện trc nó xảy ra xong thì hàm callback sẽ đc gọi
+		obj_h2.addEventListener('click', function() {
+			alert('clicked!');
+		})
+	</script>
+
+	<script type="text/javascript">
+		// + onload: 
+		window.addEventListener('load', function() {
+			//B1:
+			var obj_h4 = document.querySelector('.h4-click');
+			//B2:
+			obj_h4.addEventListener('click', function() {
+				alert('123');
+			});
+		});
+		// Luôn luôn cần phải đảm bảo code JS chạy sau cùng, chạy sau khi HTML CSS hiển thị xong
+	</script>
+	<h4 class="h4-click">Click thẻ h4 để show alert</h4>
+
+
+</body>
+</html>
