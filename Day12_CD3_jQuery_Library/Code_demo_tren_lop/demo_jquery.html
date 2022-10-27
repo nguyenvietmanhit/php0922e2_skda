@@ -1,0 +1,98 @@
+<!-- demo_jquery.html 
+- jQuery
++ Là thư viện đc xây dựng sẵn dựa trên JS
++ javascript Query, giúp cho thao tác với JS đơn giản hơn so với dùng JS thuần
++ Đc tích hợp trong nhiều web PHP
+- Học jQuery: các module
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Demo jQuery</title>
+	<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		// 1 - Tích hợp thư viện jQuery 
+		// Bản chất là sự kiện onload của JS thuần
+		$(document).ready(function() {
+			// XỬ lý form:
+			// + Lấy obj form muốn xử lý
+			// var obj_form = $('#form');
+			// // Obj lấy bằng js thuần và jquery là 2 obj hoàn toàn khác nhau, nhiều hàm sẽ ko sử dụng chung đc
+			// console.log(obj_form);
+			// // + Gắn sk submit cho form:
+			// obj_form.submit(function() {
+			// 	alert('form đc submit');
+			// });
+			$('#form').submit(function() {
+				// + B1: Tạo biến chứa lỗi và kết quả:
+				var error = '';
+				var result = '';
+				// + B2: Lấy giá trị từ form:
+				// Fullname
+				var fullname = $('#fullname').val();
+				// Age
+				var age = $('#age').val();
+				// Gender: lấy giá trị của giới tính đang đc check
+				var gender = $('input[name=gender]:checked').val();
+				// + B3: Validate form:
+				// - Tên, tuổi phải nhập, giới tính phải chọn
+				// - Tuổi phải là số
+				if (fullname == '') {
+					error = 'Phải nhập tên';
+				} else if (age == '') {
+					error = 'Phải nhập tuổi';
+				} else if (typeof gender == 'undefined') {
+					error = 'Phải chọn giới tính';
+				} else if (isNaN(age)) {
+					error = 'Tuổi phải là số';
+				}
+				// + B4: Xử lý logic chính chỉ khi ko có lỗi:
+				if (error == '') {
+					result += "Tên: " + fullname;
+					result += "<br> Tuổi: " + age;
+					if (gender == 'female') {
+						result += "<br>Giới tính: Nữ";
+					} else {
+						result += "<br>Giới tính: Nam";
+					}
+
+				}
+				// + B5: Đổ error và result ra form:
+				$('#error').html(error);
+				$('#result').html(result);
+				// Ngăn ngừa hành vi tải lại trang sau khi submit form
+				event.preventDefault();
+			})
+
+		});
+	</script>
+
+	<form id="form">
+		Nhập tên:
+		<input type="text" id="fullname">
+		<br>
+		Nhập tuổi:
+		<input type="text" id="age">
+		<br>
+		Chọn giới tính:
+		<input type="radio" name="gender" value="female">Nữ
+		<input type="radio" name="gender" value="male">Nam
+		<br>
+		<input type="submit" value="Hiển thị">
+		<input type="reset" value="Reset form">
+	</form>
+	<!-- Khai báo thẻ ko có nội dung, chờ hiển thị -->
+	<h3 id="error" style="color: red"></h3>
+	<h3 id="result" style="color: green"></h3>
+</body>
+</html>
+
+
+<!-- 
+API
+- Application Programming Interface: chuẩn cho phép các nền tảng khác nhau có thể giao tiếp đc với nhau
+ -->

@@ -1,0 +1,67 @@
+<!-- jquery_validate.html 
+- jQuery Validate: là thư viện dựa trên jQuery,
+dùng để validate dữ liệu theo kiểu realtime (keyup)
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Demo jQuery Validate</title>
+	<!-- Nhúng jQuery trước r mới jQuery Validate -->
+	<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>	
+	<script type="text/javascript">
+		$(document).ready(function() {
+			// Tạo obj validate của thư viện jQuery Validate
+			// Validate theo thuộc tính name của input
+			var obj_validate = {
+				rules: {
+					email: {
+						required: true,
+						email: true
+					},
+					age: {
+						required: true,
+						number: true
+					},
+					gender: {
+						required: true
+					}
+				},
+				messages: {
+					email: {
+						required: 'Email phải nhập',
+						email: 'Phải có định dạng email'
+					},
+					age: {
+						required: 'Tuổi phải nhập',
+						number: 'Phải nhập số'
+					},
+					gender: {
+						required: 'Phải chọn giới tính'
+					}
+				}
+			};
+			$('#form').validate(obj_validate);
+		})
+	</script>
+
+	<form id="form">
+		Nhập email:
+		<input type="text" name="email">
+		<br>
+		Nhập tuổi:
+		<input type="text" name="age">
+		<br>
+		Giới tính:
+		<input type="radio" name="gender" value="female">Nữ
+		<input type="radio" name="gender" value="male">Nam
+		<br>
+		<input type="submit" value="Validate">
+	</form>
+</body>
+</html>
