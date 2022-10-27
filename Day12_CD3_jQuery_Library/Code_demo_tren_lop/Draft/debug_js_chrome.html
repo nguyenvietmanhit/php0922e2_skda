@@ -1,0 +1,39 @@
+<!-- debug_js_chrome.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Debug JS với Chrome</title>
+</head>
+<body>
+	<form id="form">
+		Nhập tên:
+		<input type="text" id="fullname">
+		<br>
+		Nhập tuổi:
+		<input type="text" id="age">
+		<br>
+		<input type="submit" value="Show info">
+	</form>
+	<script>
+		// Cách debug JS sử dụng Chrome
+		// - Debug là tìm và gỡ lỗi code, thay vì debug thủ công bằng các hàm như console.log thì dùng tool mà Chrome hỗ trợ sẵn
+		var obj_form = document.querySelector('#form');
+		obj_form.addEventListener('submit', function() {
+			//B1: 
+			var error = '';
+			var result = '';
+			//B2: 
+			// Input nhập tên:
+			var obj_fullname = document.querySelector('#fullname');
+			var fullname = obj_fullname.value;
+			// Input nhập tuổi
+			var obj_age = document.querySelector('#age');
+			var age = obj_age.value;
+			// Một số thuật ngữ debug tự động:
+			// + breakpoint: điểm dừng khi code chạy qua
+		})
+	</script>
+</body>
+</html>

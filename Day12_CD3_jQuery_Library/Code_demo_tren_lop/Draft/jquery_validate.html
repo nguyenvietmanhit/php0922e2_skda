@@ -1,0 +1,66 @@
+<!-- jquery_validate.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Demo thư viện jQuery Validate</title>
+	<!-- Tích hợp jQuery Validate -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.js"></script>
+</head>
+<body>
+	<!-- Thư viện jQuery Validate validate dựa theo name của input -->
+	<form id="form">
+		Nhập tên:
+		<input type="text" name="fullname">
+		<br>
+		Nhập tuổi:
+		<input type="text" name="age">
+		<br>
+		Nhập email:
+		<input type="text" name="email">
+		<br>
+		Nhập url:
+		<input type="text" name="url">
+		<br>
+		<input type="submit" value="Show info">
+	</form>
+
+	<script>
+		// Validate bằng thư viện jQuery Validate:
+		// - Tên bắt buộc phải nhập, nhập ít nhất 2 ký tự
+		// - Tuổi phải là số
+		// - Email phải đúng định dạng
+		// - Url phải đúng định dạng
+		var obj = {
+			rules: {
+				fullname: {
+					required: true,
+					minlength: 2
+				},
+				age: {
+					number: true
+				},
+				email: {
+					email: true
+				},
+				url: {
+					url: true
+				}
+			},
+			messages: {
+				fullname: {
+					required: 'Tên phải nhập',
+					minlength: 'Tên ít nhất 2 ký tự'
+				},
+				age {
+					number: 'Tuổi phải là số'
+				}
+			}
+		}
+		$('#form').validate(obj);
+	</script>
+</body>
+</html>
