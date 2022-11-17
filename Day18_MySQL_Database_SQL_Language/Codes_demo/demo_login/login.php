@@ -3,10 +3,22 @@ demo_login /
            /login.php: đăng nhập
            /profile.php: hiển thị thông tin sau khi đăng nhập
            /logout.php: đăng xuất
+           - Chức năng ghi nhớ đăng nhập: lưu lại thông tin
+           đăng nhập thành công để lần sau truy cập lại thì
+           sẽ tự động đăng nhập
 -->
 <!--login.php-->
 <?php
 session_start();
+// - Check nếu tồn tại cookie username thì đăng nhập luôn
+if (isset($_COOKIE['username'])) {
+    //Tạo session để đánh dấu login thành công
+    $_SESSION['username'] = $_COOKIE['username'];
+    $_SESSION['success'] = 'Ghi nhớ đăng nhập thành công';
+    header('Location: profile.php');
+    exit();
+}
+
 // - Check nếu đăng nhập rồi thì chuyển hướng sang trang profile
 if (isset($_SESSION['username'])) {
     $_SESSION['success'] = 'Bạn đã đăng nhập rồi, ko thể truy cập
@@ -36,6 +48,13 @@ if (isset($_POST['login'])) {
     if (empty($error)) {
         // Xử lý đăng nhập: giả sử login thành công khi pass=123
         if ($password == 123) {
+            // - Xử lý ghi nhớ đăng nhập: điều kiện là login thành
+            //công và có tích vào checkbox
+            if (isset($_POST['remember'])) {
+                // Lưu thông tin đăng nhập: lưu cookie
+                setcookie('username', $username, time() + 3600);
+            }
+
             // Tạo phiên làm việc để lưu lại thông tin đăng nhập
             $_SESSION['username'] = $username;
             $_SESSION['success'] = 'Đăng nhập thành công';
