@@ -1,0 +1,87 @@
+database.txt
+1/ Cơ sở dữ liệu MySQL
++ Cơ sở dữ liệu là gì ? dùng để lưu trữ thông tin, có tính ổn định
+và lưu trữ lâu dài
++ Web lại cần CSDL ? -> web động
++ MySQL là gì? là tên 1 hệ quản trị CSDL
+CSDL: MySQL, SQL Server, NoSQL, Oracle, SQLite, PostgreSQL,
+MongoDB ...
++ MySQL free, hay kết hợp với PHP
+2/ Cài đặt và truy cập MySQL
++ XAMPP cài sẵn MySQL -> Start module MySQL
++ Truy cập: command line, UI: PHPMyadmin, MySQLWorkbench, Navicat
+.... Hiện tại sẽ sử dụng PHPMyadmin:
+http://localhost/phpmyadmin
+3/ Thuật ngữ: làm web về bán hàng
++ Database: tên csdl: php0922e_demo
+
++ Table: là các bảng, lưu thông tin theo từng đối tượng:
+users, products, categories ... (tên bảng nên ở dạng số nhiều)
+
++ Field/column: là các trường mô tả cho các thông tin sẽ lưu
+về đối tượng của bảng
+users: fullname, age, phone, address, username, password ...
+products: name, price, amount, avatar ...
+
++ Record/row: dữ liệu cụ thể của 1 đối tượng trong bảng:
+users:
+fullname = 'manhv'
+age = 32
+phone = 1234
+
++ Primary key: khóa chính trong 1 bảng, là 1 trường phân biệt các
+bản ghi với nhau:
+users:
+bản ghi1: fullname = 'abc', age = 32
+bản ghi2: fullname = 'abc', age = 32
++ Foreign key: khóa ngoại, là 1 trường bình thường trong 1 bảng,
+đồng thời là khóa chính của 1 bảng có liên kết:
+categories: id, name, description
+products: id, category_id, name, price
+-> quy tắc: <tên-bảng-số-ít>_id
+Relation: 1-1, 1-n, n-1, n-n
+
+4 - Ngôn ngữ truy vấn SQL
++ Structure Query Language
++ Là ngôn ngữ dùng để truy vấn CSDL
++ Tương ứng với từng CSDL sẽ có 1 ngôn ngữ SQL riêng
++ Sử dụng SQL để tương tác với CSDL MySQL thông qua PHPMyadmin
+5 - Một số truy vấn SQL cơ bản:
++ PHPMyadmin có 2 cách để thực hiện truy vấn SQL: Command line, UI
+-> UI để viết SQL
+
+# 1 - Tạo CSDL:
+CREATE DATABASE IF NOT EXISTS php0922e_demo
+CHARACTER SET utf8
+COLLATE utf8_general_ci;
+# 2 - Xóa CSDL:
+# DROP DATABASE abc;
+# 3 - Sử dụng CSDL: bắt buộc phải có truy vấn này trước khi có thể thao tác đc với bảng bên trong CSDL
+USE php0922e_demo;
+# 4 - Kiểu dữ liệu trong MySQL:
+# - Kiểu số: hay dùng TINYINT và INT
+# - Kiểu chuỗi: hay dùng VARCHAR và TEXT
+# - Kiểu thời gian: hay dùng DATETIME và TIMESTAMP, đều
+# lưu ngày tháng và thời gian: DATETIME lưu ngày giờ thủ
+# công, TIMESTAMP lưu tự động(lưu đc múi giờ của server)
+# Format bắt buộc trc khi lưu: Y-m-d H:i:s
+#vd:  10/03/1993 15:14:13 -> 1993-03-10 15:14:13
+# 5 - Tạo bảng:
+# categories: id, name, description, created_at
+CREATE TABLE IF NOT EXISTS categories(
+id INT(11) AUTO_INCREMENT,
+name VARCHAR(100) NOT NULL, # DEFAULT NULL
+description TEXT DEFAULT NULL,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY (id)
+);
+# products: id, category_id, name, price, created_at
+CREATE TABLE IF NOT EXISTS products(
+id INT(11) AUTO_INCREMENT,
+category_id INT(11) NOT NULL,
+name VARCHAR(150) DEFAULT NULL,
+price INT(11) DEFAULT 0,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY (id),
+FOREIGN KEY (category_id) REFERENCES categories(id)
+);

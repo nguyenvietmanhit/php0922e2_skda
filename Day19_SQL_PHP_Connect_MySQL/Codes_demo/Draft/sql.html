@@ -1,0 +1,126 @@
+sql.html
+1/ Ngôn ngữ truy vấn SQL
++ SQL - Structure Query Language, là ngôn ngữ truy vấn có cấu trúc,
+sử dụng truy vấn CSDL
+2/ Thuật ngữ CSDL:
+VD: tạo CSDL cho web bán hàng:
++ database: cơ sở dữ liệu, manhnv_database
++ table: bảng, lưu kiểu dữ liệu khác nhau:
+           : lưu thông tin của user
+products: lưu thông tin sản phẩm
+news: lưu tin tức
+...
++ field/column: là trường trong bảng, quy định thông tin sẽ lưu
+Bảng users: lưu thông tin tất cả user, có trường sau:
+fullname, age, username, password, gender ...
++ record/row: là các bản ghi của bảng, là thông tin cụ thể của
+1 đối tượng trong bảng
+fullname = manhnv, age = 32, username=manhnv, password = 123
+fullname = manhnv1, age = 321, username=manhnv1, password = aaa
+...
++ primary key: khóa chính của bảng, phân biệt các bản ghi với nhau,
+fullname = manhnv, age = 32, username=manhnv, password = 123
+fullname = manhnv, age = 32, username=manhnv, password = 123
+-> thêm 1 trường là khóa chính (unique),
++ foreign key: khóa ngoại của bảng, liên kết các bảng
+3/ Các truy vấn SQL cơ bản: sử dụng PHPMyadmin (XAMPP), Navicat,
+MySQL Workbench ..., hỗ trợ tương tác thông qua UI và Command line
+-> command line rồi mới UI sau
+
+# 1 - Tạo CSDL: từ khóa nên viết hoa
+# CREATE DATABASE abcdef;
+# Tạo CSDL dạng đầy đủ option
+CREATE DATABASE IF NOT EXISTS php0722e_demo
+CHARACTER SET utf8
+COLLATE utf8_general_ci;
+# 2 - Xóa CSDL:
+# DROP DATABASE abcdef;
+# 3 - Chọn CSDL sẽ thao tác, chỉ khi đứng trong 1 CSDL thì
+# mới thao tác với bảng, trường, bản ghi ...
+# Chỉ có tác dụng khi sử dụng command line
+USE php0722e_demo;
+# 4 - Kiểu dữ liệu trong MySQL: 3 kiểu
+# + Number:
+# TINYINT: -127 - 128
+# INT: ~ -2 tỉ - 2 tỉ
+# + String:
+# VARCHAR: max 255 ký tự
+# TEXT: > 255 ký tự
+# + Date và Time: định dạng bắt buộc cho ngày giờ để lưu đc thành công phải là Y-m-d H:i:s. VD: 03-10-2022 19:52:50 / 03/10/2022 19:52:50 -> 2022-10-03 19:52:50
+# DATETIME: lưu ngày giờ theo kiểu thủ công, ko liên quan
+# tới múi giờ
+# TIMESTAMP: lưu ngày giờ theo kiểu tự động theo múi giờ
+# 5 - Tạo bảng:
+CREATE TABLE IF NOT EXISTS tests(
+fullname VARCHAR(100) DEFAULT NULL
+);
+# Xóa bảng:
+# DROP TABLE tests;
+# Tạo 2 bảng như sau:
+# Bảng categories: id, name
+CREATE TABLE IF NOT EXISTS categories(
+id INT(11) AUTO_INCREMENT,
+name VARCHAR(150) NOT NULL,
+PRIMARY KEY(id)
+);
+# Bảng products: id, category_id, name, price, description, created_at
+CREATE TABLE IF NOT EXISTS products(
+id INT(11) AUTO_INCREMENT,
+category_id INT(11), # khóa ngoại, <tên-bảng-lk>_id
+    name VARCHAR(100) DEFAULT NULL,
+    price INT(11) DEFAULT 0,
+    description TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY(id),
+    FOREIGN KEY(category_id) REFERENCES categories(id)
+    );
+    # 6 - Bốn truy vấn cơ bản: INSERT, SELECT, UPDATE, DELETE
+    # a/ INSERT: thêm 2 bản ghi vào bảng categories: id, name,
+    # chỉ thêm với các trường ko phải sinh tự động
+    # INSERT INTO categories(name)
+    # VALUES('Tivi'), ('Điện thoại');
+
+    # Insert vào bảng products: id, category_id, name, price,desctiption, created_at
+    # Khóa ngoại phải dựa trên giá trị có sẵn của trường id trong bảng sẽ liên kết tới là categories
+    #INSERT INTO products(category_id, name, price, description)
+    #VALUES(1, 'TV Samsung', 1000, 'Chi tiết tv sss'),
+    #      (1, 'TV Sony', 2000, 'Chi tiết tv sony'),
+    #      (1, 'TV Toshiba', 3000, 'Chi tiết tv toshiba'),
+    #     (1, 'TV LG', 1500, 'Chi tiết tv lg'),
+    #     (2, 'Iphone X', 1000, 'Chi tiết ipx'),
+    #     (2, 'Ss note', 2000, 'Chi tiết ss note');
+    #
+    # b/ SELECT: Lấy dữ liệu ra
+    # - LẤy tất cả thông tin của tất cả sản phẩm:
+    SELECT * FROM products;
+    # - Lấy tên và giá của tất cả sp:
+    SELECT name,price FROM products;
+    # - LẤy tất cả thông tin của các sp có id < 3
+    SELECT * FROM products WHERE id < 3;
+    SELECT * FROM products WHERE id == 3 AND price = 1000;
+    # - Lấy 3 sản phẩm đầu tiên:
+    SELECT * FROM products LIMIT 3;
+    # - Lấy 3 sản phẩm tính từ sản phẩm thứ 2:
+    SELECT * FROM products LIMIT 2,3; # cách ưu tiên
+    SELECT * FROM products LIMIT 3 OFFSET 2;
+    # - Tìm sp có tên chứa chuỗi tv: % đại diện cho các ký tự bất kỳ
+    SELECT * FROM products WHERE name LIKE '%tv%';#tv sony, abctv, tv
+    # - LẤy tất cả sp theo thứ tự mới nhất -> cũ nhất:
+    # desc: decend: giảm dần
+    # asc: acsend: tăng dần
+    SELECT * FROM products ORDER BY created_at DESC;
+    # c / UPDATE: cập nhật dữ liệu
+    # Sửa tên sp = abc với sp có id = 1
+    # Luôn phải set điều kiện WHERE khi update, nếu ko update toàn bộ bảng!
+    UPDATE products SET name = 'abc' WHERE id = 1;
+    # d / DELETE: xóa dữ liệu
+    # Xóa sp có id > 10:
+    # Luôn phải set điều kiện WHERE khi delete, nếu ko delete toàn bộ bảng!
+    DELETE FROM products WHERE id > 10;
+
+    # 7 - Thao tác import , export CSDL
+    # Export CSDL: xuất file .sql
+    # Import CSDL: cần tạo database trước, sau đó mới import file
+    # .sql
+
+
