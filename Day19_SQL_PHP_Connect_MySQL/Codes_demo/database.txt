@@ -85,3 +85,75 @@ created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY (id),
 FOREIGN KEY (category_id) REFERENCES categories(id)
 );
+
+# 6 - Xóa bảng:
+# DROP TABLE abc;
+# 7 - Bốn truy vấn cơ bản:
+# a/ INSERT: thêm dữ liệu vào bảng
+# categories: id, name, description, created_at
+# - Chỉ INSERT vào các trường mà dữ liệu của nó ko phải là
+# sinh ra tự động, chỉ thêm name và description
+INSERT INTO categories(name, description)
+VALUES('Thể thao', 'Mô tả thể thao');
+# Insert nhiều:
+INSERT INTO categories(name, description)
+VALUES
+('Thể thao 1', 'Mô tả thể thao 1'),
+('Thể thao 2', 'Mô tả thể thao 2'),
+('Thể thao 3', 'Mô tả thể thao 3'),
+('Thể thao 4', 'Mô tả thể thao 4'),
+('Thể thao 5', 'Mô tả thể thao 5');
+# b/ SELECT: lấy dữ liệu
+# - Lấy tất cả trường của mọi danh mục đang có:
+SELECT * FROM categories;
+# - Lấy id và name của tất cả danh mục:
+SELECT id, name FROM categories;
+# - Lấy danh mục có id > 3:
+SELECT * FROM categories WHERE id > 3;
+# - Lấy 4 danh mục đầu tiên, ko dùng WHERE
+SELECT * FROM categories LIMIT 4;
+# - Lấy 3 bản ghi tính từ bản ghi thứ 2 trở đi:
+SELECT * FROM categories LIMIT 3 OFFSET 2;
+SELECT * FROM categories LIMIT 2,3; # ưu tiên
+# - Tìm danh mục có tên chứa chuỗi 'thao': ký tự % đại diện
+# cho các ký tự bất kỳ:
+SELECT * FROM categories WHERE name LIKE '%thao%';
+# - Lấy các danh mục theo thứ tự mới nhất -> cũ nhất
+# DESC = descend
+# ASC = ascend
+SELECT * FROM categories ORDER BY created_at DESC;
+# - Lấy các danh mục có id = 1 hoặc 2 hoặc 3:
+SELECT * FROM categories WHERE id = 1 OR id = 2 OR id = 3;
+# Dùng IN:
+SELECT * FROM categories WHERE id IN (1, 2, 3);
+# - Lấy các danh mục có id nằm trong khoảng 1 và 4:
+SELECT * FROM categories WHERE id >= 1 AND id <= 4;
+# BETWEEN:
+SELECT * FROM categories WHERE id BETWEEN 1 AND 4;
+# - Một số hàm dùng với SELECT:
+# Hàm COUNT: đếm số bản ghi
+SELECT COUNT(id) AS count_id FROM categories;
+# MAX MIN AVG SUM ..
+# c / UPDATE: sửa bản ghi
+# Sửa name = abc, description = def cho danh mục có id = 1:
+# - Luôn phải chỉ định điều kiện khi UPDATE, nếu ko UPDATE toàn
+# bộ bảng
+UPDATE categories SET name = 'abc', description = 'def'
+WHERE id = 1;
+# d / DELETE: xóa dữ liệu:
+# Xóa danh mục có id > 5:
+# Chú ý WHERE khi delete, nếu ko delete toàn bộ data của bảng
+DELETE FROM categories WHERE id > 5;
+
+# 8 - IMPORT và EXPORT CSDL:
+# - Export CSDL php0922e_demo sử dụng PHPMyadmin: xuất ra file .sql
+# Vào CSDL muốn export, Chọn menu Export -> Go , chọn chỗ lưu file
+# - IMPORT file .sql thành 1 CSDL dữ liệu mới:
+# Tạo CSDL php0922e_import thủ công trước, đi vào CSDL và thực hiện IMPORT
+
+# 9 - Demo truy vấn JOIN:
+# Tạo CSDL php0922e_join, IMPORT file demo_join_db.sql trong ngày 19
+
+
+
+
