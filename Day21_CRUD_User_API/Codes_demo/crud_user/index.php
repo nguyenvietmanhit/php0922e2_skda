@@ -33,6 +33,24 @@ echo '<pre>';
 print_r($users);
 echo '</pre>';
 ?>
+<h3 style="color: green">
+    <?php
+    if (isset($_SESSION['success'])) {
+        echo $_SESSION['success'];
+        unset($_SESSION['success']);
+    }
+    ?>
+</h3>
+<h3 style="color: red">
+    <?php
+    if (isset($_SESSION['error'])) {
+        echo $_SESSION['error'];
+        unset($_SESSION['error']);
+    }
+    ?>
+</h3>
+
+
 <h2>Danh sách user</h2>
 <a href="create.php">Thêm mới</a>
 <table border="1" cellspacing="0" cellpadding="8">

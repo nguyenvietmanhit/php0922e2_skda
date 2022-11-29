@@ -1,0 +1,36 @@
+<!--crud_user/list_ajax.html
+- Kỹ thuật Ajax: Asynchronous Javascript And XML, là kỹ thuật ko
+đồng bộ dựa trên ngôn ngữ Javascript
+PHP là ngôn ngữ đồng bộ: -> tốc độ chuyển trang chậm
+Javascript là ngôn ngữ ko đồng bộ
+- Tích hợp jQuery để dùng ajax cho dễ về mặt cú pháp
+-->
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<a href="#" id="click-ajax">
+    Click để lấy danh sách user mà ko cần tải lại trang
+</a>
+<div style="border: 1px solid red" id="result">
+    Danh sách user sẽ đc hiển thị tại đây
+</div>
+<script>
+    $(document).ready(function() {
+        // Click vào thẻ a thì gọi ajax lên PHP để lấy list user
+        $('#click-ajax').click(function() {
+            // Gọi ajax
+            $.ajax({
+                url: 'index.php', //url PHP sẽ xử lý ajax
+                method: 'get', // Phương thức gửi dữ liệu:get post put delete
+                data: {
+                    fullname: 'manhnv',
+                    age: 32
+                },
+                success: function(data) { //nơi nhận dữ liệu trả về từ PHP
+                    console.log(data)
+                    $('#result').html(data);
+                //     Debug ajax:
+                    // Inspsect -> Network -> Filter theo Fetch/XHR
+                }
+            })
+        })
+    })
+</script>
