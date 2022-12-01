@@ -1,0 +1,43 @@
+<!--crud_user_api/frontend/index.html-->
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<h2>Danh sách user</h2>
+<table  id="result" border="1" cellpadding="8" cellspacing="0">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>abc</td>
+        <td>32</td>
+    </tr>
+</table>
+<script>
+    $(document).ready(function() {
+        $.ajax({
+            url: 'http://localhost/php0922e2_skda/Day22_CRUD_API_CRUD/Codes_demo/crud_user_api/api/api.php',
+            method: 'GET',
+            success: function (data) {
+                // Decode kiểu dữ liệu JSON về kiểu dữ liệu của JS
+                data = JSON.parse(data);
+                console.log(data)
+                // Lặp mảng data trên
+                var result = "";
+                $.each(data, function(key, user) {
+                    console.log(key)
+                    console.log(user)
+                    result += "<tr>";
+                    result += "<td>" + user.id + "</td>";
+                    result += "<td>" + user.name + "</td>";
+                    result += "<td>" + user.age + "</td>";
+                    result += "</tr>";
+                })
+                // Sinh ta phần tử kế tiếp của selector
+                $('#result').append(result);
+                // Xóa selector hiện tại
+                // $('#result').remove();
+            }
+        });
+    })
+</script>

@@ -1,0 +1,28 @@
+note.txt
+- Code CRUD sử dụng API
+1 / API
+Application Programming Interface: là 1 tập các quy tắc để các
+nền tảng khác nhau có thể giao tiếp đc với nhau
++ Hiện nay xu hướng là dùng API, với ứng dụng Web thì API
+hay thể hiện:
+Backend: PHP
+Frontend: HTML, CSS, JS, Javasript
+Viết chức năng Liệt kê user sử dụng API:
++ Backend: PHP viết API
++ Frontend: gọi API từ backend
+2 / RESTful API: là chuẩn cụ thể đc thực thi từ API, quy định
+các chức năng cụ thể nào thì sử dụng phương thức nào để truy cập
+Create: POST
+List: GET
+Update: PUT
+Delete: DELETE
+- Status code trả về của API:
+- Kiểu dữ liệu JSON - Javascript Object Notation
+Là kiểu dữ liệu trả về từ API phổ biến nhất
+3 / Tạo CRUD user theo sử dụng RESTful API
+crud_user_api /
+              /api
+                  /connection.php
+                  /api.php
+
+              /frontend
