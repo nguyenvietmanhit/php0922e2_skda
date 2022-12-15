@@ -36,3 +36,5 @@ git status
 + B3: Dev: Tạo Merge Request / Pull Request để yêu cầu PM review code và merge/gộp code của bạn
 vào nhánh main chính: cần để ý url sau khi push thành công
 + B4: Review và merge code của các dev: PM
+Sau khi đc merge, code của bạn sẽ chính thức đc
+gộp vào nhánh chính
