@@ -39,13 +39,13 @@ $action = isset($_GET['action']) ? $_GET['action'] : 'index';
 // user -> UserController
 $controller = ucfirst($controller); //User
 $controller .= "Controller"; // UserController
-var_dump($controller); //UserController
+//var_dump($controller); //UserController
 // index.php?controller=user&action=create
 // + Nhúng đường dẫn tới file controller tương ứng:
 // Trong MVC luôn luôn phải tư duy đứng từ file index gốc để
 //nhúng các file khác
 $controller_path = "controllers/$controller.php";
-var_dump($controller_path); //controllers/UserController.php
+//var_dump($controller_path); //controllers/UserController.php
 
 if (!file_exists($controller_path)) {
     die('Trang bạn tìm không tồn tại - 404');

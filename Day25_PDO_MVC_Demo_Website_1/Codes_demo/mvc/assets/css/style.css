@@ -1,0 +1,11 @@
+/*assets/css/style.css*/
+header {
+    background: pink;
+}
+main {
+    border: 2px solid red;
+}
+footer {
+    background: green;
+}
+/*Ctrl Shift R để tải lại trang và xóa cache trình duyệt*/
