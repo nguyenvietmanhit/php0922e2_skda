@@ -5,7 +5,6 @@ require_once 'controllers/Controller.php';
 require_once 'models/User.php';
 
 class UserController extends Controller {
-
     //index.php?controller=user&action=create
     public function create() {
         // - Controller xử lý submit form:
@@ -62,6 +61,21 @@ class UserController extends Controller {
 //        var_dump($this->content);
         // + Gọi layout để hiển thị các thông tin trên
         // Layout động
+        require_once 'views/layouts/main.php';
+    }
+
+    // index.php?controller=user&action=index
+    public function index() {
+        // - Controller gọi Model
+        $user_model = new User();
+        $users = $user_model->getUsers();
+
+        // - Controller gọi View
+        $this->page_title = 'Danh sách user';
+        $this->content =
+            $this->render('views/users/index.php', [
+                'users' => $users // $users
+            ]);
         require_once 'views/layouts/main.php';
     }
 }

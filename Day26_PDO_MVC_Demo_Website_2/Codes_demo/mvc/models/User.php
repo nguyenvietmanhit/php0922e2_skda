@@ -19,4 +19,17 @@ class User extends Model {
         return $obj_insert->execute($inserts);
 
     }
+
+    public function getUsers() {
+        // B1:
+        $sql_select_all =
+            "SELECT * FROM users ORDER BY created_at DESC";
+        // B2:
+        $obj_select_all = $this->connection->prepare($sql_select_all);
+        // B3: Tạo mảng, bỏ qua
+        // B4:
+        $obj_select_all->execute();
+        // B5:
+        return $obj_select_all->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
