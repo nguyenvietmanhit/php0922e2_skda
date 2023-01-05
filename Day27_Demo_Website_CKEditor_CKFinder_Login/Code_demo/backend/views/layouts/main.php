@@ -52,7 +52,8 @@
 <!-- AdminLTE App -->
 <script src="assets/js/adminlte.min.js"></script>
 <!--CKEditor -->
-<script src="assets/ckeditor/ckeditor.js"></script>
+<!--<script src="assets/ckeditor/ckeditor.js"></script>-->
+<script src="https://cdn.ckeditor.com/4.20.1/standard/ckeditor.js"></script>
 <!--My SCRIPT-->
 <script src="assets/js/script.js"></script>
 </body>

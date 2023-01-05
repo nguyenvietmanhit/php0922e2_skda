@@ -19,9 +19,9 @@ $(document).ready(function () {
 
   CKEDITOR.replace('description', {
     //đường dẫn đến file ckfinder.html của ckfinder
-    filebrowserBrowseUrl: 'assets/ckfinder/ckfinder.html',
+    filebrowserBrowseUrl: 'assets/ckfinder_php.7.x/ckfinder.html',
     //đường dẫn đến file connector.php của ckfinder
-    filebrowserUploadUrl: 'assets/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+    filebrowserUploadUrl: 'assets/ckfinder_php.7.x/core/connector/php/connector.php?command=QuickUpload&type=Files'
   });
 
 });
