@@ -1,0 +1,26 @@
+<!--note.html-->
+1 - Tích hợp trình soạn thảo CKEditor và trình
+upload ảnh CKFinder vào content của bài viết
+- Với chi tiết 1 bài viết/tin tức bắt buộc phải tích hợp
+trình soạn thảo và upload ảnh để tiện cho user
+- Tích hợp CKEditor:
++ Bắt buộc phải dùng textarea thông qua name của textarea
++ Nhúng file ckeditor.js vào layout
++ Code tích hợp
+2 - Tích hợp CKfinder - Trình upload ảnh
+Mặc định CKEditor ko cho phép upload ảnh từ máy tính lên
+- Download thủ công CKFinder về, đặt tại thư mục
+assets, nhớ phải để ý version PHP đang cài để tải
+CKFinder tương ứng
+- Code js thêm ở phần tích hợp CKEditor
+Mặc định PHP8 disabled thư viện gd, nên CKfinder sẽ ko hoạt
+động -> enable trong file php.ini
+- Ko free, mà cần crack
+3 - Demo chức năng đky user:
++ Lên trang thực tế xem cách hoạt động r giao diện
+Username, password, confirm password
+Logic: INSERT users, username lưu bt, password 123456 -> ko
+bao giờ đc lưu pass dưới dạng plain text -> bắt buộc phải
+mã hóa trc khi lưu
+Cơ chế mã hóa pass: md5 -> ko nên dùng vì giải mã đơn giản,
+nên dùng bcrypt
