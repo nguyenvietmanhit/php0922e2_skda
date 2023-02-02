@@ -1,4 +1,5 @@
 <?php
+//views/products/index.php
 require_once 'helpers/Helper.php';
 ?>
 
@@ -6,20 +7,25 @@ require_once 'helpers/Helper.php';
     <a href="index.php?controller=product&action=create" class="btn btn-success">
         <i class="fa fa-plus"></i> Thêm mới
     </a>
-<table class="table table-bordered">
-    <tr>
-        <th>ID</th>
-        <th>Category name</th>
-        <th>Title</th>
-        <th>Avatar</th>
-        <th>Price</th>
-        <th>Amount</th>
-        <th>Status</th>
-        <th>Created_at</th>
-        <th>Updated_at</th>
-        <th></th>
-    </tr>
-    <?php if (!empty($products)): ?>
+<!--Khai báo id hoặc class cho table để áp dụng JS cho Datatable-->
+<!--Thêm thead và tbody tương ứng cho cấu trúc bảng-->
+<table id="test" class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Category name</th>
+            <th>Title</th>
+            <th>Avatar</th>
+            <th>Price</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Created_at</th>
+            <th>Updated_at</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php if (!empty($products)): ?>
         <?php foreach ($products as $product): ?>
             <tr>
                 <td><?php echo $product['id'] ?></td>
@@ -54,4 +60,6 @@ require_once 'helpers/Helper.php';
             <td colspan="9">No data found</td>
         </tr>
     <?php endif; ?>
+    </tbody>
 </table>
+

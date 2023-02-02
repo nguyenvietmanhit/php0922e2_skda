@@ -24,3 +24,20 @@ bao giờ đc lưu pass dưới dạng plain text -> bắt buộc phải
 mã hóa trc khi lưu
 Cơ chế mã hóa pass: md5 -> ko nên dùng vì giải mã đơn giản,
 nên dùng bcrypt
+
+
+4 - Demo chức năng đăng nhập:
++ Xử lý login dựa vào logic khi register
++ LẤy thông tin từ form , tìm trong bảng users dựa theo username gửi lên,
+lấy password đã mã hóa so khớp với password gửi lên
+
+5 - Thư viện DataTable của jQuery
++ Với trang danh sách sp, tin tức thì sẽ có thêm các chức năng như Tìm kiếm,
+Sắp xếp, Phân trang, cần phải code PHP cho các chức năng -> mất time
+Thay vì đó sử dụng thư viện trên để sinh ra sẵn 3 chức năng trên sử dụng code JS
+có sẵn
+Nhược điểm của thư viện: ko nên áp dụng khi số lượng dữ liệu lớn
++ Cách tích hợp:
+Đọc document: https://datatables.net/
+- Tích hợp CSS và JS sử dụng link CDN, copy vào file layout main.php
+

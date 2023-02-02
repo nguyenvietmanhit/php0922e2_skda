@@ -8,6 +8,11 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+<!--  views/layouts/main.php  -->
+    <!-- CSS Datatable -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="assets/css/all.min.css">
     <link rel="stylesheet" href="assets/css/AdminLTE.min.css">
@@ -54,6 +59,10 @@
 <!--CKEditor -->
 <!--<script src="assets/ckeditor/ckeditor.js"></script>-->
 <script src="https://cdn.ckeditor.com/4.20.1/standard/ckeditor.js"></script>
+
+<!-- Datatable, sau jQuery-->
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+
 <!--My SCRIPT-->
 <script src="assets/js/script.js"></script>
 </body>
