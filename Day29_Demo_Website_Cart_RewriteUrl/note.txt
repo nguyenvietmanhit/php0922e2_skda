@@ -1,0 +1,45 @@
+1 - Chức năng giỏ hàng
++ Đi siêu thị dùng cái xe đẩy hàng -> lượn website chọn các
+sp ứng ý để tạm vào giỏ -> tiện mua sắm
++ Code, lưu giỏ hàng bằng gì ?
+- Database: data ko bị mất, tuy nhiên có thể chứa các dữ liệu
+rác
+- File: giống database, nên hạn chế vì xử lý file khó
+- Session,cookie: đơn giản, ko bị dư thừa dữ liệu
+-> dùng session
+2 - Cấu trúc mảng session giỏ hàng:
+$_SESSION['cart'] = [
+    2 => [
+        'name' => 'Iphone X',
+        'avatar' => 'iphone.jpg',
+        'price' => 1000,
+        'quantity' => 3
+    ],
+    5 => [
+            'name' => 'SS S3',
+            'avatar' => 's3.jpg',
+            'price' => 2000,
+            'quantity' => 5
+        ],
+]
+3 - Chú ý
+Nên sử dụng ajax cho chức năng Thêm vào giỏ để tránh hiệu ứng ko
+tốt cho user là tải lại trang mỗi khi click
+Ajax - Asynchronous Javascript And XML,là kỹ thuật thao tác với
+server mà ko cần load lại trang, dựa trên Javascript
+Với PHP nên sử dụng Ajax của thư viện jQuery
+
+
+4 - Rewrite URL
++ Là chức năng tạo ra các url đẹp và thân thiện với user
++ Sử dụng file .htaccess, file này bắt buộc phải đặt cùng cấp với
+file index.php gốc
++ Thực tế luôn luôn rewrite URL
++ index.php?controller=cart&action=index
+/frontend/index.php?controller=news&action=detail&id=3
+https://vnexpress.net/xung-dot-nga-ukraine-thay-doi-ban-co-dia-chinh-tri-the-gioi-4571141.html
+
+
+include
+require
+KHác nhau khi nhúng 1 file ko tồn tại
