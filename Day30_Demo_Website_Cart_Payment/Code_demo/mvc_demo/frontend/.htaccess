@@ -2,4 +2,10 @@
 RewriteEngine On
 
 RewriteRule gio-hang-cua-ban.html index.php?controller=cart&action=index
+# Xóa sản phẩm khỏi giỏ, sử dụng tham số động , phải dùng
+# biểu thức chính quy để thể hiện cho tham số động
+# ([0-9]+) -> thể hiện cho 1 số có từ 1 ký tự trở lên
+RewriteRule xoa-san-pham/([0-9]+).html index.php?controller=cart&action=delete&id=$1
+
+RewriteRule thanh-toan.html index.php?controller=payment&action=index
 
