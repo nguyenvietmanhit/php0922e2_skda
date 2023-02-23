@@ -1,0 +1,5 @@
+# .htaccess
+RewriteEngine On
+
+RewriteRule gio-hang-cua-ban.html index.php?controller=cart&action=index
+
